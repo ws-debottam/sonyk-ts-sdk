@@ -1,6 +1,6 @@
 {
     "name": "sonyk-sdk",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "private": false,
     "repository": "github:ws-debottam/sonyk-ts-sdk",
     "type": "commonjs",
