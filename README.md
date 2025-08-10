@@ -1,9 +1,9 @@
-# Spiderx TypeScript Library
+# Sonyk TypeScript Library
 
 [![fern shield](https://img.shields.io/badge/%F0%9F%8C%BF-Built%20with%20Fern-brightgreen)](https://buildwithfern.com?utm_source=github&utm_medium=github&utm_campaign=readme&utm_source=https%3A%2F%2Fgithub.com%2Fws-debottam%2Fsonyk-ts-sdk)
 [![npm shield](https://img.shields.io/npm/v/sonyk-sdk)](https://www.npmjs.com/package/sonyk-sdk)
 
-The Spiderx TypeScript library provides convenient access to the Spiderx API from TypeScript.
+The Sonyk TypeScript library provides convenient access to the Sonyk API from TypeScript.
 
 ## Installation
 
