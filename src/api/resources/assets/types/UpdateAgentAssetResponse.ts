@@ -4,11 +4,11 @@
 
 import * as Sonyk from "../../../index.js";
 
-export interface UpdateAgentAssetDeveloperResponse extends Sonyk.BaseResponse {
-    data?: UpdateAgentAssetDeveloperResponse.Data;
+export interface UpdateAgentAssetResponse extends Sonyk.BaseResponse {
+    data?: UpdateAgentAssetResponse.Data;
 }
 
-export namespace UpdateAgentAssetDeveloperResponse {
+export namespace UpdateAgentAssetResponse {
     export interface Data {
         /** Number of new chunks created (if text was updated) */
         chunkCount?: number;

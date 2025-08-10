@@ -6,7 +6,7 @@ import { mockServerPool } from "../mock-server/MockServerPool";
 import { SonykClient } from "../../src/Client";
 
 describe("Tools", () => {
-    test("listToolsDeveloper", async () => {
+    test("listTools", async () => {
         const server = mockServerPool.createServer();
         const client = new SonykClient({ apiKey: "test", environment: server.baseUrl });
 
@@ -43,7 +43,7 @@ describe("Tools", () => {
             .jsonBody(rawResponseBody)
             .build();
 
-        const response = await client.tools.listToolsDeveloper();
+        const response = await client.tools.listTools();
         expect(response).toEqual({
             success: true,
             message: "message",
@@ -81,7 +81,7 @@ describe("Tools", () => {
         });
     });
 
-    test("createToolDeveloper", async () => {
+    test("createTool", async () => {
         const server = mockServerPool.createServer();
         const client = new SonykClient({ apiKey: "test", environment: server.baseUrl });
         const rawRequestBody = {
@@ -122,7 +122,7 @@ describe("Tools", () => {
             .jsonBody(rawResponseBody)
             .build();
 
-        const response = await client.tools.createToolDeveloper({
+        const response = await client.tools.createTool({
             tool_name: "make_reservation",
             tool_description:
                 "Creates a new restaurant reservation with the specified date, time, party size, and customer details",
@@ -156,7 +156,7 @@ describe("Tools", () => {
         });
     });
 
-    test("getToolDeveloper", async () => {
+    test("getTool", async () => {
         const server = mockServerPool.createServer();
         const client = new SonykClient({ apiKey: "test", environment: server.baseUrl });
 
@@ -190,7 +190,7 @@ describe("Tools", () => {
             .jsonBody(rawResponseBody)
             .build();
 
-        const response = await client.tools.getToolDeveloper("toolId");
+        const response = await client.tools.getTool("toolId");
         expect(response).toEqual({
             success: true,
             message: "message",
@@ -218,7 +218,7 @@ describe("Tools", () => {
         });
     });
 
-    test("updateToolDeveloper", async () => {
+    test("updateTool", async () => {
         const server = mockServerPool.createServer();
         const client = new SonykClient({ apiKey: "test", environment: server.baseUrl });
         const rawRequestBody = {
@@ -259,7 +259,7 @@ describe("Tools", () => {
             .jsonBody(rawResponseBody)
             .build();
 
-        const response = await client.tools.updateToolDeveloper("toolId", {
+        const response = await client.tools.updateTool("toolId", {
             tool_name: "make_reservation",
             tool_description:
                 "Creates a new restaurant reservation with the specified date, time, party size, and customer details",
@@ -293,7 +293,7 @@ describe("Tools", () => {
         });
     });
 
-    test("deleteToolDeveloper", async () => {
+    test("deleteTool", async () => {
         const server = mockServerPool.createServer();
         const client = new SonykClient({ apiKey: "test", environment: server.baseUrl });
 
@@ -306,7 +306,7 @@ describe("Tools", () => {
             .jsonBody(rawResponseBody)
             .build();
 
-        const response = await client.tools.deleteToolDeveloper("toolId");
+        const response = await client.tools.deleteTool("toolId");
         expect(response).toEqual({
             success: true,
             message: "message",

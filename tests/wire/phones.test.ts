@@ -6,7 +6,7 @@ import { mockServerPool } from "../mock-server/MockServerPool";
 import { SonykClient } from "../../src/Client";
 
 describe("Phones", () => {
-    test("listPhonesDeveloper", async () => {
+    test("listPhones", async () => {
         const server = mockServerPool.createServer();
         const client = new SonykClient({ apiKey: "test", environment: server.baseUrl });
 
@@ -36,7 +36,7 @@ describe("Phones", () => {
             .jsonBody(rawResponseBody)
             .build();
 
-        const response = await client.phones.listPhonesDeveloper({
+        const response = await client.phones.listPhones({
             provider: "twilio",
         });
         expect(response).toEqual({
@@ -66,7 +66,7 @@ describe("Phones", () => {
         });
     });
 
-    test("createPhoneDeveloper", async () => {
+    test("createPhone", async () => {
         const server = mockServerPool.createServer();
         const client = new SonykClient({ apiKey: "test", environment: server.baseUrl });
         const rawRequestBody = { phoneNumber: "+1234567890", provider: "twilio" };
@@ -95,7 +95,7 @@ describe("Phones", () => {
             .jsonBody(rawResponseBody)
             .build();
 
-        const response = await client.phones.createPhoneDeveloper({
+        const response = await client.phones.createPhone({
             phoneNumber: "+1234567890",
             provider: "twilio",
         });
@@ -120,7 +120,7 @@ describe("Phones", () => {
         });
     });
 
-    test("getPhoneDeveloper", async () => {
+    test("getPhone", async () => {
         const server = mockServerPool.createServer();
         const client = new SonykClient({ apiKey: "test", environment: server.baseUrl });
 
@@ -148,7 +148,7 @@ describe("Phones", () => {
             .jsonBody(rawResponseBody)
             .build();
 
-        const response = await client.phones.getPhoneDeveloper("phoneId");
+        const response = await client.phones.getPhone("phoneId");
         expect(response).toEqual({
             success: true,
             message: "message",
@@ -170,7 +170,7 @@ describe("Phones", () => {
         });
     });
 
-    test("updatePhoneDeveloper", async () => {
+    test("updatePhone", async () => {
         const server = mockServerPool.createServer();
         const client = new SonykClient({ apiKey: "test", environment: server.baseUrl });
         const rawRequestBody = {};
@@ -199,7 +199,7 @@ describe("Phones", () => {
             .jsonBody(rawResponseBody)
             .build();
 
-        const response = await client.phones.updatePhoneDeveloper("phoneId");
+        const response = await client.phones.updatePhone("phoneId");
         expect(response).toEqual({
             success: true,
             message: "message",
@@ -221,7 +221,7 @@ describe("Phones", () => {
         });
     });
 
-    test("deletePhoneDeveloper", async () => {
+    test("deletePhone", async () => {
         const server = mockServerPool.createServer();
         const client = new SonykClient({ apiKey: "test", environment: server.baseUrl });
 
@@ -234,7 +234,7 @@ describe("Phones", () => {
             .jsonBody(rawResponseBody)
             .build();
 
-        const response = await client.phones.deletePhoneDeveloper("phoneId");
+        const response = await client.phones.deletePhone("phoneId");
         expect(response).toEqual({
             success: true,
             message: "message",
@@ -242,7 +242,7 @@ describe("Phones", () => {
         });
     });
 
-    test("mapPhoneToAgentDeveloper", async () => {
+    test("mapPhoneToAgent", async () => {
         const server = mockServerPool.createServer();
         const client = new SonykClient({ apiKey: "test", environment: server.baseUrl });
         const rawRequestBody = { agentId: "agentId" };
@@ -271,7 +271,7 @@ describe("Phones", () => {
             .jsonBody(rawResponseBody)
             .build();
 
-        const response = await client.phones.mapPhoneToAgentDeveloper("phoneId", {
+        const response = await client.phones.mapPhoneToAgent("phoneId", {
             agentId: "agentId",
         });
         expect(response).toEqual({
@@ -295,7 +295,7 @@ describe("Phones", () => {
         });
     });
 
-    test("unmapPhoneFromAgentDeveloper", async () => {
+    test("unmapPhoneFromAgent", async () => {
         const server = mockServerPool.createServer();
         const client = new SonykClient({ apiKey: "test", environment: server.baseUrl });
 
@@ -323,7 +323,7 @@ describe("Phones", () => {
             .jsonBody(rawResponseBody)
             .build();
 
-        const response = await client.phones.unmapPhoneFromAgentDeveloper("phoneId");
+        const response = await client.phones.unmapPhoneFromAgent("phoneId");
         expect(response).toEqual({
             success: true,
             message: "message",

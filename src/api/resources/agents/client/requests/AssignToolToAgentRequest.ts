@@ -8,7 +8,7 @@
  *         toolId: "tool_123abc456def"
  *     }
  */
-export interface AssignToolToAgentDeveloperRequest {
+export interface AssignToolToAgentRequest {
     /** Tool identifier to assign */
     toolId: string;
 }

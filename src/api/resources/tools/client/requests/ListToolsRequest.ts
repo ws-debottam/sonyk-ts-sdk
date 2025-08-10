@@ -6,7 +6,7 @@
  * @example
  *     {}
  */
-export interface ListToolsDeveloperRequest {
+export interface ListToolsRequest {
     /**
      * Page number for pagination
      */

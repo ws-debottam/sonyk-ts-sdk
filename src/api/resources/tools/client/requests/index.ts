@@ -1,1 +1,1 @@
-export { type ListToolsDeveloperRequest } from "./ListToolsDeveloperRequest.js";
+export { type ListToolsRequest } from "./ListToolsRequest.js";

@@ -6,7 +6,7 @@
  * @example
  *     {}
  */
-export interface UpdatePhoneDeveloperRequest {
+export interface UpdatePhoneRequest {
     nickname?: string;
     /** Agent ID to assign (null to unassign) */
     agentId?: string;

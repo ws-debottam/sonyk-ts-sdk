@@ -6,7 +6,7 @@
  * @example
  *     {}
  */
-export interface UpdateAgentAssetDeveloperRequest {
+export interface UpdateAgentAssetRequest {
     /** New title for the asset */
     title?: string;
     /**

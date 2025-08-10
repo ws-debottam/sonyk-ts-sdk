@@ -44,7 +44,7 @@ export class Calls {
      * Proxy endpoint to initiate calls through the Sonyk Core API system.
      * Validates permissions and credits, then forwards request to core.sonyk.io.
      *
-     * @param {Sonyk.InitiateCoreCallRequest} request
+     * @param {Sonyk.InitiateCallRequest} request
      * @param {Calls.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link Sonyk.ForbiddenError}
@@ -53,20 +53,20 @@ export class Calls {
      * @throws {@link Sonyk.ServiceUnavailableError}
      *
      * @example
-     *     await client.calls.initiateCoreCall({
+     *     await client.calls.initiateCall({
      *         agentId: "68572764-2437-42ce-a5ce-02451e9df97c",
      *         toNumber: "+919831222222"
      *     })
      */
-    public initiateCoreCall(
-        request: Sonyk.InitiateCoreCallRequest,
+    public initiateCall(
+        request: Sonyk.InitiateCallRequest,
         requestOptions?: Calls.RequestOptions,
     ): core.HttpResponsePromise<Sonyk.CoreCallResponse> {
-        return core.HttpResponsePromise.fromPromise(this.__initiateCoreCall(request, requestOptions));
+        return core.HttpResponsePromise.fromPromise(this.__initiateCall(request, requestOptions));
     }
 
-    private async __initiateCoreCall(
-        request: Sonyk.InitiateCoreCallRequest,
+    private async __initiateCall(
+        request: Sonyk.InitiateCallRequest,
         requestOptions?: Calls.RequestOptions,
     ): Promise<core.WithRawResponse<Sonyk.CoreCallResponse>> {
         const _response = await (this._options.fetcher ?? core.fetcher)({

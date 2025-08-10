@@ -8,6 +8,6 @@
  *         toolId: "toolId"
  *     }
  */
-export interface UnassignToolFromAgentDeveloperRequest {
+export interface UnassignToolFromAgentRequest {
     toolId: string;
 }

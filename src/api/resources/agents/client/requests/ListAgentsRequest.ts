@@ -6,7 +6,7 @@
  * @example
  *     {}
  */
-export interface ListAgentsDeveloperRequest {
+export interface ListAgentsRequest {
     /**
      * Page number for pagination
      */

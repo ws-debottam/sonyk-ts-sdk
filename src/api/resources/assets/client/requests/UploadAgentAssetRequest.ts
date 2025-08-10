@@ -11,7 +11,7 @@ import * as core from "../../../../../core/index.js";
  *         file: fs.createReadStream("/path/to/your/file")
  *     }
  */
-export interface UploadAgentAssetDeveloperRequest {
+export interface UploadAgentAssetRequest {
     file: core.file.Uploadable.FileLike;
     /**
      * Optional custom title for the asset.

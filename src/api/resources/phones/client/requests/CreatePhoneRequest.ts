@@ -9,7 +9,7 @@
  *         provider: "twilio"
  *     }
  */
-export interface CreatePhoneDeveloperRequest {
+export interface CreatePhoneRequest {
     /** Phone number in E.164 format */
     phoneNumber: string;
     /** Phone service provider */

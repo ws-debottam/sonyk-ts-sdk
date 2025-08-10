@@ -8,7 +8,7 @@
  *         agentId: "agentId"
  *     }
  */
-export interface MapPhoneToAgentDeveloperRequest {
+export interface MapPhoneToAgentRequest {
     /** Agent ID to assign the phone to */
     agentId: string;
 }

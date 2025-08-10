@@ -4,11 +4,11 @@
 
 import * as Sonyk from "../../../index.js";
 
-export interface CreateAgentTextAssetDeveloperResponse extends Sonyk.BaseResponse {
-    data?: CreateAgentTextAssetDeveloperResponse.Data;
+export interface CreateAgentTextAssetResponse extends Sonyk.BaseResponse {
+    data?: CreateAgentTextAssetResponse.Data;
 }
 
-export namespace CreateAgentTextAssetDeveloperResponse {
+export namespace CreateAgentTextAssetResponse {
     export interface Data {
         /** Unique identifier for the created asset */
         assetId?: number;

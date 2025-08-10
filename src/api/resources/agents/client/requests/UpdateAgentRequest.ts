@@ -8,7 +8,7 @@ import * as Sonyk from "../../../../index.js";
  * @example
  *     {}
  */
-export interface UpdateAgentDeveloperRequest {
+export interface UpdateAgentRequest {
     agent_name?: string;
     agent_json?: Sonyk.AgentConfiguration;
 }

@@ -4,11 +4,11 @@
 
 import * as Sonyk from "../../../index.js";
 
-export interface SearchAgentAssetsInternalResponse extends Sonyk.BaseResponse {
-    data?: SearchAgentAssetsInternalResponse.Data;
+export interface SearchAgentAssetsResponse extends Sonyk.BaseResponse {
+    data?: SearchAgentAssetsResponse.Data;
 }
 
-export namespace SearchAgentAssetsInternalResponse {
+export namespace SearchAgentAssetsResponse {
     export interface Data {
         /** The search query that was executed */
         query?: string;

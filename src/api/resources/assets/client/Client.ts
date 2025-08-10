@@ -71,28 +71,28 @@ export class Assets {
      * - Customer service knowledge base
      *
      * @param {string} agentId - Agent ID to retrieve assets for
-     * @param {Sonyk.ListAgentAssetsDeveloperRequest} request
+     * @param {Sonyk.ListAgentAssetsRequest} request
      * @param {Assets.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link Sonyk.UnauthorizedError}
      * @throws {@link Sonyk.NotFoundError}
      *
      * @example
-     *     await client.assets.listAgentAssetsDeveloper("agent_abc123def456", {
+     *     await client.assets.listAgentAssets("agent_abc123def456", {
      *         search: "product documentation"
      *     })
      */
-    public listAgentAssetsDeveloper(
+    public listAgentAssets(
         agentId: string,
-        request: Sonyk.ListAgentAssetsDeveloperRequest = {},
+        request: Sonyk.ListAgentAssetsRequest = {},
         requestOptions?: Assets.RequestOptions,
     ): core.HttpResponsePromise<Sonyk.AssetListResponse> {
-        return core.HttpResponsePromise.fromPromise(this.__listAgentAssetsDeveloper(agentId, request, requestOptions));
+        return core.HttpResponsePromise.fromPromise(this.__listAgentAssets(agentId, request, requestOptions));
     }
 
-    private async __listAgentAssetsDeveloper(
+    private async __listAgentAssets(
         agentId: string,
-        request: Sonyk.ListAgentAssetsDeveloperRequest = {},
+        request: Sonyk.ListAgentAssetsRequest = {},
         requestOptions?: Assets.RequestOptions,
     ): Promise<core.WithRawResponse<Sonyk.AssetListResponse>> {
         const { page, limit, type: type_, search } = request;
@@ -196,17 +196,17 @@ export class Assets {
      * @throws {@link Sonyk.NotFoundError}
      *
      * @example
-     *     await client.assets.getAgentAssetDeveloper("agentId", 1)
+     *     await client.assets.getAgentAssetDetails("agentId", 1)
      */
-    public getAgentAssetDeveloper(
+    public getAgentAssetDetails(
         agentId: string,
         assetId: number,
         requestOptions?: Assets.RequestOptions,
     ): core.HttpResponsePromise<Sonyk.AssetDetailedResponse> {
-        return core.HttpResponsePromise.fromPromise(this.__getAgentAssetDeveloper(agentId, assetId, requestOptions));
+        return core.HttpResponsePromise.fromPromise(this.__getAgentAssetDetails(agentId, assetId, requestOptions));
     }
 
-    private async __getAgentAssetDeveloper(
+    private async __getAgentAssetDetails(
         agentId: string,
         assetId: number,
         requestOptions?: Assets.RequestOptions,
@@ -287,31 +287,29 @@ export class Assets {
      *
      * @param {string} agentId
      * @param {number} assetId
-     * @param {Sonyk.UpdateAgentAssetDeveloperRequest} request
+     * @param {Sonyk.UpdateAgentAssetRequest} request
      * @param {Assets.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link Sonyk.BadRequestError}
      *
      * @example
-     *     await client.assets.updateAgentAssetDeveloper("agentId", 1)
+     *     await client.assets.updateAgentAsset("agentId", 1)
      */
-    public updateAgentAssetDeveloper(
+    public updateAgentAsset(
         agentId: string,
         assetId: number,
-        request: Sonyk.UpdateAgentAssetDeveloperRequest = {},
+        request: Sonyk.UpdateAgentAssetRequest = {},
         requestOptions?: Assets.RequestOptions,
-    ): core.HttpResponsePromise<Sonyk.UpdateAgentAssetDeveloperResponse> {
-        return core.HttpResponsePromise.fromPromise(
-            this.__updateAgentAssetDeveloper(agentId, assetId, request, requestOptions),
-        );
+    ): core.HttpResponsePromise<Sonyk.UpdateAgentAssetResponse> {
+        return core.HttpResponsePromise.fromPromise(this.__updateAgentAsset(agentId, assetId, request, requestOptions));
     }
 
-    private async __updateAgentAssetDeveloper(
+    private async __updateAgentAsset(
         agentId: string,
         assetId: number,
-        request: Sonyk.UpdateAgentAssetDeveloperRequest = {},
+        request: Sonyk.UpdateAgentAssetRequest = {},
         requestOptions?: Assets.RequestOptions,
-    ): Promise<core.WithRawResponse<Sonyk.UpdateAgentAssetDeveloperResponse>> {
+    ): Promise<core.WithRawResponse<Sonyk.UpdateAgentAssetResponse>> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
@@ -334,10 +332,7 @@ export class Assets {
             abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
-            return {
-                data: _response.body as Sonyk.UpdateAgentAssetDeveloperResponse,
-                rawResponse: _response.rawResponse,
-            };
+            return { data: _response.body as Sonyk.UpdateAgentAssetResponse, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
@@ -398,21 +393,21 @@ export class Assets {
      * @param {Assets.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
-     *     await client.assets.deleteAgentAssetDeveloper("agentId", 1)
+     *     await client.assets.deleteAgentAsset("agentId", 1)
      */
-    public deleteAgentAssetDeveloper(
+    public deleteAgentAsset(
         agentId: string,
         assetId: number,
         requestOptions?: Assets.RequestOptions,
-    ): core.HttpResponsePromise<Sonyk.DeleteAgentAssetDeveloperResponse> {
-        return core.HttpResponsePromise.fromPromise(this.__deleteAgentAssetDeveloper(agentId, assetId, requestOptions));
+    ): core.HttpResponsePromise<Sonyk.DeleteAgentAssetResponse> {
+        return core.HttpResponsePromise.fromPromise(this.__deleteAgentAsset(agentId, assetId, requestOptions));
     }
 
-    private async __deleteAgentAssetDeveloper(
+    private async __deleteAgentAsset(
         agentId: string,
         assetId: number,
         requestOptions?: Assets.RequestOptions,
-    ): Promise<core.WithRawResponse<Sonyk.DeleteAgentAssetDeveloperResponse>> {
+    ): Promise<core.WithRawResponse<Sonyk.DeleteAgentAssetResponse>> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
@@ -432,10 +427,7 @@ export class Assets {
             abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
-            return {
-                data: _response.body as Sonyk.DeleteAgentAssetDeveloperResponse,
-                rawResponse: _response.rawResponse,
-            };
+            return { data: _response.body as Sonyk.DeleteAgentAssetResponse, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
@@ -532,7 +524,7 @@ export class Assets {
      * - **Spreadsheet Data**: Product catalogs, pricing, specifications
      *
      * @param {string} agentId
-     * @param {Sonyk.UploadAgentAssetDeveloperRequest} request
+     * @param {Sonyk.UploadAgentAssetRequest} request
      * @param {Assets.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link Sonyk.BadRequestError}
@@ -541,23 +533,23 @@ export class Assets {
      *
      * @example
      *     import { createReadStream } from "fs";
-     *     await client.assets.uploadAgentAssetDeveloper("agentId", {
+     *     await client.assets.uploadAgentAsset("agentId", {
      *         file: fs.createReadStream("/path/to/your/file")
      *     })
      */
-    public uploadAgentAssetDeveloper(
+    public uploadAgentAsset(
         agentId: string,
-        request: Sonyk.UploadAgentAssetDeveloperRequest,
+        request: Sonyk.UploadAgentAssetRequest,
         requestOptions?: Assets.RequestOptions,
-    ): core.HttpResponsePromise<Sonyk.UploadAgentAssetDeveloperResponse> {
-        return core.HttpResponsePromise.fromPromise(this.__uploadAgentAssetDeveloper(agentId, request, requestOptions));
+    ): core.HttpResponsePromise<Sonyk.UploadAgentAssetResponse> {
+        return core.HttpResponsePromise.fromPromise(this.__uploadAgentAsset(agentId, request, requestOptions));
     }
 
-    private async __uploadAgentAssetDeveloper(
+    private async __uploadAgentAsset(
         agentId: string,
-        request: Sonyk.UploadAgentAssetDeveloperRequest,
+        request: Sonyk.UploadAgentAssetRequest,
         requestOptions?: Assets.RequestOptions,
-    ): Promise<core.WithRawResponse<Sonyk.UploadAgentAssetDeveloperResponse>> {
+    ): Promise<core.WithRawResponse<Sonyk.UploadAgentAssetResponse>> {
         const _request = await core.newFormData();
         await _request.appendFile("file", request.file);
         if (request.title != null) {
@@ -590,10 +582,7 @@ export class Assets {
             abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
-            return {
-                data: _response.body as Sonyk.UploadAgentAssetDeveloperResponse,
-                rawResponse: _response.rawResponse,
-            };
+            return { data: _response.body as Sonyk.UploadAgentAssetResponse, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
@@ -731,31 +720,29 @@ export class Assets {
      * - Test agent responses after updates
      *
      * @param {string} agentId
-     * @param {Sonyk.CreateAgentTextAssetDeveloperRequest} request
+     * @param {Sonyk.CreateAgentTextAssetRequest} request
      * @param {Assets.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link Sonyk.BadRequestError}
      *
      * @example
-     *     await client.assets.createAgentTextAssetDeveloper("agentId", {
+     *     await client.assets.createAgentTextAsset("agentId", {
      *         text: "# Customer Service FAQ - Updated January 2025\n\n## Business Information\n\n### Q: What are your business hours?\nA: We are open Monday to Friday from 9 AM to 6 PM EST. Weekend support is available via email only.\n\n### Q: Where are you located?\nA: Our headquarters is at 123 Business St, City, State 12345. We also have locations in Chicago and Miami.\n\n## Product Support\n\n### Q: How do I return a product?\nA: Returns are easy! Visit our website's return portal, print a shipping label, and send the item back within 30 days. Refunds are processed within 5-7 business days.\n\n### Q: What's your warranty policy?\nA: All products come with a standard 1-year warranty. Extended warranties up to 3 years are available for purchase.\n\n## Account Management\n\n### Q: How do I reset my password?\nA: Click 'Forgot Password' on the login page, enter your email, and follow the instructions sent to your inbox. The reset link expires in 24 hours.\n\n### Q: Can I change my subscription plan?\nA: Yes! Log into your account, go to Settings > Subscription, and select your new plan. Changes take effect immediately.\n"
      *     })
      */
-    public createAgentTextAssetDeveloper(
+    public createAgentTextAsset(
         agentId: string,
-        request: Sonyk.CreateAgentTextAssetDeveloperRequest,
+        request: Sonyk.CreateAgentTextAssetRequest,
         requestOptions?: Assets.RequestOptions,
-    ): core.HttpResponsePromise<Sonyk.CreateAgentTextAssetDeveloperResponse> {
-        return core.HttpResponsePromise.fromPromise(
-            this.__createAgentTextAssetDeveloper(agentId, request, requestOptions),
-        );
+    ): core.HttpResponsePromise<Sonyk.CreateAgentTextAssetResponse> {
+        return core.HttpResponsePromise.fromPromise(this.__createAgentTextAsset(agentId, request, requestOptions));
     }
 
-    private async __createAgentTextAssetDeveloper(
+    private async __createAgentTextAsset(
         agentId: string,
-        request: Sonyk.CreateAgentTextAssetDeveloperRequest,
+        request: Sonyk.CreateAgentTextAssetRequest,
         requestOptions?: Assets.RequestOptions,
-    ): Promise<core.WithRawResponse<Sonyk.CreateAgentTextAssetDeveloperResponse>> {
+    ): Promise<core.WithRawResponse<Sonyk.CreateAgentTextAssetResponse>> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
@@ -778,10 +765,7 @@ export class Assets {
             abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
-            return {
-                data: _response.body as Sonyk.CreateAgentTextAssetDeveloperResponse,
-                rawResponse: _response.rawResponse,
-            };
+            return { data: _response.body as Sonyk.CreateAgentTextAssetResponse, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
@@ -873,23 +857,21 @@ export class Assets {
      * @throws {@link Sonyk.NotFoundError}
      *
      * @example
-     *     await client.assets.getAgentAssetContentDeveloper("agentId", 1)
+     *     await client.assets.getAgentAssetContent("agentId", 1)
      */
-    public getAgentAssetContentDeveloper(
+    public getAgentAssetContent(
         agentId: string,
         assetId: number,
         requestOptions?: Assets.RequestOptions,
-    ): core.HttpResponsePromise<Sonyk.GetAgentAssetContentDeveloperResponse> {
-        return core.HttpResponsePromise.fromPromise(
-            this.__getAgentAssetContentDeveloper(agentId, assetId, requestOptions),
-        );
+    ): core.HttpResponsePromise<Sonyk.GetAgentAssetContentResponse> {
+        return core.HttpResponsePromise.fromPromise(this.__getAgentAssetContent(agentId, assetId, requestOptions));
     }
 
-    private async __getAgentAssetContentDeveloper(
+    private async __getAgentAssetContent(
         agentId: string,
         assetId: number,
         requestOptions?: Assets.RequestOptions,
-    ): Promise<core.WithRawResponse<Sonyk.GetAgentAssetContentDeveloperResponse>> {
+    ): Promise<core.WithRawResponse<Sonyk.GetAgentAssetContentResponse>> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
@@ -909,10 +891,7 @@ export class Assets {
             abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
-            return {
-                data: _response.body as Sonyk.GetAgentAssetContentDeveloperResponse,
-                rawResponse: _response.rawResponse,
-            };
+            return { data: _response.body as Sonyk.GetAgentAssetContentResponse, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
@@ -1019,27 +998,27 @@ export class Assets {
      * - **0.9-1.0**: Strict matching, only very closely related content returned
      *
      * @param {string} agentId
-     * @param {Sonyk.SearchAgentAssetsInternalRequest} request
+     * @param {Sonyk.SearchAgentAssetsRequest} request
      * @param {Assets.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
-     *     await client.assets.searchAgentAssetsInternal("agentId", {
+     *     await client.assets.searchAgentAssets("agentId", {
      *         query: "How do I reset my password?"
      *     })
      */
-    public searchAgentAssetsInternal(
+    public searchAgentAssets(
         agentId: string,
-        request: Sonyk.SearchAgentAssetsInternalRequest,
+        request: Sonyk.SearchAgentAssetsRequest,
         requestOptions?: Assets.RequestOptions,
-    ): core.HttpResponsePromise<Sonyk.SearchAgentAssetsInternalResponse> {
-        return core.HttpResponsePromise.fromPromise(this.__searchAgentAssetsInternal(agentId, request, requestOptions));
+    ): core.HttpResponsePromise<Sonyk.SearchAgentAssetsResponse> {
+        return core.HttpResponsePromise.fromPromise(this.__searchAgentAssets(agentId, request, requestOptions));
     }
 
-    private async __searchAgentAssetsInternal(
+    private async __searchAgentAssets(
         agentId: string,
-        request: Sonyk.SearchAgentAssetsInternalRequest,
+        request: Sonyk.SearchAgentAssetsRequest,
         requestOptions?: Assets.RequestOptions,
-    ): Promise<core.WithRawResponse<Sonyk.SearchAgentAssetsInternalResponse>> {
+    ): Promise<core.WithRawResponse<Sonyk.SearchAgentAssetsResponse>> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
@@ -1062,10 +1041,7 @@ export class Assets {
             abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
-            return {
-                data: _response.body as Sonyk.SearchAgentAssetsInternalResponse,
-                rawResponse: _response.rawResponse,
-            };
+            return { data: _response.body as Sonyk.SearchAgentAssetsResponse, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {

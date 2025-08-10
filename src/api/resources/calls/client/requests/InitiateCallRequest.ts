@@ -9,7 +9,7 @@
  *         toNumber: "+919831222222"
  *     }
  */
-export interface InitiateCoreCallRequest {
+export interface InitiateCallRequest {
     /** UUID of the agent to use for the call */
     agentId: string;
     /** Phone number to call (E.164 format) */

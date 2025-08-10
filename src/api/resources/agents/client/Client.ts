@@ -46,21 +46,21 @@ export class Agents {
     /**
      * Retrieve all agents for the organization
      *
-     * @param {Sonyk.ListAgentsDeveloperRequest} request
+     * @param {Sonyk.ListAgentsRequest} request
      * @param {Agents.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
-     *     await client.agents.listAgentsDeveloper()
+     *     await client.agents.listAgents()
      */
-    public listAgentsDeveloper(
-        request: Sonyk.ListAgentsDeveloperRequest = {},
+    public listAgents(
+        request: Sonyk.ListAgentsRequest = {},
         requestOptions?: Agents.RequestOptions,
     ): core.HttpResponsePromise<Sonyk.AgentListResponse> {
-        return core.HttpResponsePromise.fromPromise(this.__listAgentsDeveloper(request, requestOptions));
+        return core.HttpResponsePromise.fromPromise(this.__listAgents(request, requestOptions));
     }
 
-    private async __listAgentsDeveloper(
-        request: Sonyk.ListAgentsDeveloperRequest = {},
+    private async __listAgents(
+        request: Sonyk.ListAgentsRequest = {},
         requestOptions?: Agents.RequestOptions,
     ): Promise<core.WithRawResponse<Sonyk.AgentListResponse>> {
         const { page, limit, search } = request;
@@ -127,11 +127,11 @@ export class Agents {
     /**
      * Create a new AI voice agent with specified configuration
      *
-     * @param {Sonyk.CreateAgentDeveloperRequest} request
+     * @param {Sonyk.CreateAgentRequest} request
      * @param {Agents.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
-     *     await client.agents.createAgentDeveloper({
+     *     await client.agents.createAgent({
      *         agent_name: "Restaurant Receptionist",
      *         agent_json: {
      *             llm: {
@@ -153,15 +153,15 @@ export class Agents {
      *         }
      *     })
      */
-    public createAgentDeveloper(
-        request: Sonyk.CreateAgentDeveloperRequest,
+    public createAgent(
+        request: Sonyk.CreateAgentRequest,
         requestOptions?: Agents.RequestOptions,
     ): core.HttpResponsePromise<Sonyk.AgentResponse> {
-        return core.HttpResponsePromise.fromPromise(this.__createAgentDeveloper(request, requestOptions));
+        return core.HttpResponsePromise.fromPromise(this.__createAgent(request, requestOptions));
     }
 
-    private async __createAgentDeveloper(
-        request: Sonyk.CreateAgentDeveloperRequest,
+    private async __createAgent(
+        request: Sonyk.CreateAgentRequest,
         requestOptions?: Agents.RequestOptions,
     ): Promise<core.WithRawResponse<Sonyk.AgentResponse>> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
@@ -221,16 +221,16 @@ export class Agents {
      * @param {Agents.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
-     *     await client.agents.getAgentDeveloper("agent_abc123def456")
+     *     await client.agents.getAgent("agent_abc123def456")
      */
-    public getAgentDeveloper(
+    public getAgent(
         agentId: string,
         requestOptions?: Agents.RequestOptions,
     ): core.HttpResponsePromise<Sonyk.AgentDetailedResponse> {
-        return core.HttpResponsePromise.fromPromise(this.__getAgentDeveloper(agentId, requestOptions));
+        return core.HttpResponsePromise.fromPromise(this.__getAgent(agentId, requestOptions));
     }
 
-    private async __getAgentDeveloper(
+    private async __getAgent(
         agentId: string,
         requestOptions?: Agents.RequestOptions,
     ): Promise<core.WithRawResponse<Sonyk.AgentDetailedResponse>> {
@@ -288,23 +288,23 @@ export class Agents {
      * allowing partial updates while preserving existing settings.
      *
      * @param {string} agentId
-     * @param {Sonyk.UpdateAgentDeveloperRequest} request
+     * @param {Sonyk.UpdateAgentRequest} request
      * @param {Agents.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
-     *     await client.agents.updateAgentDeveloper("agentId")
+     *     await client.agents.updateAgent("agentId")
      */
-    public updateAgentDeveloper(
+    public updateAgent(
         agentId: string,
-        request: Sonyk.UpdateAgentDeveloperRequest = {},
+        request: Sonyk.UpdateAgentRequest = {},
         requestOptions?: Agents.RequestOptions,
     ): core.HttpResponsePromise<Sonyk.AgentResponse> {
-        return core.HttpResponsePromise.fromPromise(this.__updateAgentDeveloper(agentId, request, requestOptions));
+        return core.HttpResponsePromise.fromPromise(this.__updateAgent(agentId, request, requestOptions));
     }
 
-    private async __updateAgentDeveloper(
+    private async __updateAgent(
         agentId: string,
-        request: Sonyk.UpdateAgentDeveloperRequest = {},
+        request: Sonyk.UpdateAgentRequest = {},
         requestOptions?: Agents.RequestOptions,
     ): Promise<core.WithRawResponse<Sonyk.AgentResponse>> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
@@ -366,16 +366,16 @@ export class Agents {
      * @param {Agents.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
-     *     await client.agents.deleteAgentDeveloper("agentId")
+     *     await client.agents.deleteAgent("agentId")
      */
-    public deleteAgentDeveloper(
+    public deleteAgent(
         agentId: string,
         requestOptions?: Agents.RequestOptions,
     ): core.HttpResponsePromise<Sonyk.SuccessResponse> {
-        return core.HttpResponsePromise.fromPromise(this.__deleteAgentDeveloper(agentId, requestOptions));
+        return core.HttpResponsePromise.fromPromise(this.__deleteAgent(agentId, requestOptions));
     }
 
-    private async __deleteAgentDeveloper(
+    private async __deleteAgent(
         agentId: string,
         requestOptions?: Agents.RequestOptions,
     ): Promise<core.WithRawResponse<Sonyk.SuccessResponse>> {
@@ -435,16 +435,16 @@ export class Agents {
      * @param {Agents.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
-     *     await client.agents.getAgentToolsDeveloper("agentId")
+     *     await client.agents.getAgentTools("agentId")
      */
-    public getAgentToolsDeveloper(
+    public getAgentTools(
         agentId: string,
         requestOptions?: Agents.RequestOptions,
     ): core.HttpResponsePromise<Sonyk.ToolListResponse> {
-        return core.HttpResponsePromise.fromPromise(this.__getAgentToolsDeveloper(agentId, requestOptions));
+        return core.HttpResponsePromise.fromPromise(this.__getAgentTools(agentId, requestOptions));
     }
 
-    private async __getAgentToolsDeveloper(
+    private async __getAgentTools(
         agentId: string,
         requestOptions?: Agents.RequestOptions,
     ): Promise<core.WithRawResponse<Sonyk.ToolListResponse>> {
@@ -501,27 +501,25 @@ export class Agents {
      * Assign an existing tool to an agent
      *
      * @param {string} agentId
-     * @param {Sonyk.AssignToolToAgentDeveloperRequest} request
+     * @param {Sonyk.AssignToolToAgentRequest} request
      * @param {Agents.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
-     *     await client.agents.assignToolToAgentDeveloper("agentId", {
+     *     await client.agents.assignToolToAgent("agentId", {
      *         toolId: "tool_123abc456def"
      *     })
      */
-    public assignToolToAgentDeveloper(
+    public assignToolToAgent(
         agentId: string,
-        request: Sonyk.AssignToolToAgentDeveloperRequest,
+        request: Sonyk.AssignToolToAgentRequest,
         requestOptions?: Agents.RequestOptions,
     ): core.HttpResponsePromise<Sonyk.SuccessResponse> {
-        return core.HttpResponsePromise.fromPromise(
-            this.__assignToolToAgentDeveloper(agentId, request, requestOptions),
-        );
+        return core.HttpResponsePromise.fromPromise(this.__assignToolToAgent(agentId, request, requestOptions));
     }
 
-    private async __assignToolToAgentDeveloper(
+    private async __assignToolToAgent(
         agentId: string,
-        request: Sonyk.AssignToolToAgentDeveloperRequest,
+        request: Sonyk.AssignToolToAgentRequest,
         requestOptions?: Agents.RequestOptions,
     ): Promise<core.WithRawResponse<Sonyk.SuccessResponse>> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
@@ -580,27 +578,25 @@ export class Agents {
      * Remove a tool assignment from an agent
      *
      * @param {string} agentId
-     * @param {Sonyk.UnassignToolFromAgentDeveloperRequest} request
+     * @param {Sonyk.UnassignToolFromAgentRequest} request
      * @param {Agents.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
-     *     await client.agents.unassignToolFromAgentDeveloper("agentId", {
+     *     await client.agents.unassignToolFromAgent("agentId", {
      *         toolId: "toolId"
      *     })
      */
-    public unassignToolFromAgentDeveloper(
+    public unassignToolFromAgent(
         agentId: string,
-        request: Sonyk.UnassignToolFromAgentDeveloperRequest,
+        request: Sonyk.UnassignToolFromAgentRequest,
         requestOptions?: Agents.RequestOptions,
     ): core.HttpResponsePromise<Sonyk.SuccessResponse> {
-        return core.HttpResponsePromise.fromPromise(
-            this.__unassignToolFromAgentDeveloper(agentId, request, requestOptions),
-        );
+        return core.HttpResponsePromise.fromPromise(this.__unassignToolFromAgent(agentId, request, requestOptions));
     }
 
-    private async __unassignToolFromAgentDeveloper(
+    private async __unassignToolFromAgent(
         agentId: string,
-        request: Sonyk.UnassignToolFromAgentDeveloperRequest,
+        request: Sonyk.UnassignToolFromAgentRequest,
         requestOptions?: Agents.RequestOptions,
     ): Promise<core.WithRawResponse<Sonyk.SuccessResponse>> {
         const _response = await (this._options.fetcher ?? core.fetcher)({

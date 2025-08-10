@@ -46,21 +46,21 @@ export class Tools {
     /**
      * Retrieve all available tools for the organization
      *
-     * @param {Sonyk.ListToolsDeveloperRequest} request
+     * @param {Sonyk.ListToolsRequest} request
      * @param {Tools.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
-     *     await client.tools.listToolsDeveloper()
+     *     await client.tools.listTools()
      */
-    public listToolsDeveloper(
-        request: Sonyk.ListToolsDeveloperRequest = {},
+    public listTools(
+        request: Sonyk.ListToolsRequest = {},
         requestOptions?: Tools.RequestOptions,
     ): core.HttpResponsePromise<Sonyk.ToolListResponse> {
-        return core.HttpResponsePromise.fromPromise(this.__listToolsDeveloper(request, requestOptions));
+        return core.HttpResponsePromise.fromPromise(this.__listTools(request, requestOptions));
     }
 
-    private async __listToolsDeveloper(
-        request: Sonyk.ListToolsDeveloperRequest = {},
+    private async __listTools(
+        request: Sonyk.ListToolsRequest = {},
         requestOptions?: Tools.RequestOptions,
     ): Promise<core.WithRawResponse<Sonyk.ToolListResponse>> {
         const { page, limit, search } = request;
@@ -131,21 +131,21 @@ export class Tools {
      * @param {Tools.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
-     *     await client.tools.createToolDeveloper({
+     *     await client.tools.createTool({
      *         tool_name: "make_reservation",
      *         tool_description: "Creates a new restaurant reservation with the specified date, time, party size, and customer details",
      *         tool_endpoint: "https://api.restaurant.com/reservations",
      *         tool_method: "GET"
      *     })
      */
-    public createToolDeveloper(
+    public createTool(
         request: Sonyk.CreateToolRequest,
         requestOptions?: Tools.RequestOptions,
     ): core.HttpResponsePromise<Sonyk.ToolResponse> {
-        return core.HttpResponsePromise.fromPromise(this.__createToolDeveloper(request, requestOptions));
+        return core.HttpResponsePromise.fromPromise(this.__createTool(request, requestOptions));
     }
 
-    private async __createToolDeveloper(
+    private async __createTool(
         request: Sonyk.CreateToolRequest,
         requestOptions?: Tools.RequestOptions,
     ): Promise<core.WithRawResponse<Sonyk.ToolResponse>> {
@@ -206,16 +206,16 @@ export class Tools {
      * @param {Tools.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
-     *     await client.tools.getToolDeveloper("toolId")
+     *     await client.tools.getTool("toolId")
      */
-    public getToolDeveloper(
+    public getTool(
         toolId: string,
         requestOptions?: Tools.RequestOptions,
     ): core.HttpResponsePromise<Sonyk.ToolResponse> {
-        return core.HttpResponsePromise.fromPromise(this.__getToolDeveloper(toolId, requestOptions));
+        return core.HttpResponsePromise.fromPromise(this.__getTool(toolId, requestOptions));
     }
 
-    private async __getToolDeveloper(
+    private async __getTool(
         toolId: string,
         requestOptions?: Tools.RequestOptions,
     ): Promise<core.WithRawResponse<Sonyk.ToolResponse>> {
@@ -274,22 +274,22 @@ export class Tools {
      * @param {Tools.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
-     *     await client.tools.updateToolDeveloper("toolId", {
+     *     await client.tools.updateTool("toolId", {
      *         tool_name: "make_reservation",
      *         tool_description: "Creates a new restaurant reservation with the specified date, time, party size, and customer details",
      *         tool_endpoint: "https://api.restaurant.com/reservations",
      *         tool_method: "GET"
      *     })
      */
-    public updateToolDeveloper(
+    public updateTool(
         toolId: string,
         request: Sonyk.CreateToolRequest,
         requestOptions?: Tools.RequestOptions,
     ): core.HttpResponsePromise<Sonyk.ToolResponse> {
-        return core.HttpResponsePromise.fromPromise(this.__updateToolDeveloper(toolId, request, requestOptions));
+        return core.HttpResponsePromise.fromPromise(this.__updateTool(toolId, request, requestOptions));
     }
 
-    private async __updateToolDeveloper(
+    private async __updateTool(
         toolId: string,
         request: Sonyk.CreateToolRequest,
         requestOptions?: Tools.RequestOptions,
@@ -351,16 +351,16 @@ export class Tools {
      * @param {Tools.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
-     *     await client.tools.deleteToolDeveloper("toolId")
+     *     await client.tools.deleteTool("toolId")
      */
-    public deleteToolDeveloper(
+    public deleteTool(
         toolId: string,
         requestOptions?: Tools.RequestOptions,
     ): core.HttpResponsePromise<Sonyk.SuccessResponse> {
-        return core.HttpResponsePromise.fromPromise(this.__deleteToolDeveloper(toolId, requestOptions));
+        return core.HttpResponsePromise.fromPromise(this.__deleteTool(toolId, requestOptions));
     }
 
-    private async __deleteToolDeveloper(
+    private async __deleteTool(
         toolId: string,
         requestOptions?: Tools.RequestOptions,
     ): Promise<core.WithRawResponse<Sonyk.SuccessResponse>> {

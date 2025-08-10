@@ -1,8 +1,8 @@
 {
     "name": "sonyk-sdk",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "private": false,
-    "repository": "github:ws-debottam/sonyk-sdk",
+    "repository": "github:ws-debottam/sonyk-ts-sdk",
     "type": "commonjs",
     "main": "./dist/cjs/index.js",
     "module": "./dist/esm/index.mjs",

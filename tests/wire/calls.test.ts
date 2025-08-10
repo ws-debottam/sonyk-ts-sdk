@@ -6,7 +6,7 @@ import { mockServerPool } from "../mock-server/MockServerPool";
 import { SonykClient } from "../../src/Client";
 
 describe("Calls", () => {
-    test("initiateCoreCall", async () => {
+    test("initiateCall", async () => {
         const server = mockServerPool.createServer();
         const client = new SonykClient({ apiKey: "test", environment: server.baseUrl });
         const rawRequestBody = { agentId: "68572764-2437-42ce-a5ce-02451e9df97c", toNumber: "+919831222222" };
@@ -36,7 +36,7 @@ describe("Calls", () => {
             .jsonBody(rawResponseBody)
             .build();
 
-        const response = await client.calls.initiateCoreCall({
+        const response = await client.calls.initiateCall({
             agentId: "68572764-2437-42ce-a5ce-02451e9df97c",
             toNumber: "+919831222222",
         });

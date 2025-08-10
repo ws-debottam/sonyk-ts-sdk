@@ -46,23 +46,23 @@ export class Phones {
     /**
      * Retrieve all phone numbers for the organization
      *
-     * @param {Sonyk.ListPhonesDeveloperRequest} request
+     * @param {Sonyk.ListPhonesRequest} request
      * @param {Phones.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
-     *     await client.phones.listPhonesDeveloper({
+     *     await client.phones.listPhones({
      *         provider: "twilio"
      *     })
      */
-    public listPhonesDeveloper(
-        request: Sonyk.ListPhonesDeveloperRequest = {},
+    public listPhones(
+        request: Sonyk.ListPhonesRequest = {},
         requestOptions?: Phones.RequestOptions,
     ): core.HttpResponsePromise<Sonyk.PhoneListResponse> {
-        return core.HttpResponsePromise.fromPromise(this.__listPhonesDeveloper(request, requestOptions));
+        return core.HttpResponsePromise.fromPromise(this.__listPhones(request, requestOptions));
     }
 
-    private async __listPhonesDeveloper(
-        request: Sonyk.ListPhonesDeveloperRequest = {},
+    private async __listPhones(
+        request: Sonyk.ListPhonesRequest = {},
         requestOptions?: Phones.RequestOptions,
     ): Promise<core.WithRawResponse<Sonyk.PhoneListResponse>> {
         const { page, limit, provider, is_active: isActive, agentId } = request;
@@ -137,24 +137,24 @@ export class Phones {
     /**
      * Add a new phone number to the organization
      *
-     * @param {Sonyk.CreatePhoneDeveloperRequest} request
+     * @param {Sonyk.CreatePhoneRequest} request
      * @param {Phones.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
-     *     await client.phones.createPhoneDeveloper({
+     *     await client.phones.createPhone({
      *         phoneNumber: "+1234567890",
      *         provider: "twilio"
      *     })
      */
-    public createPhoneDeveloper(
-        request: Sonyk.CreatePhoneDeveloperRequest,
+    public createPhone(
+        request: Sonyk.CreatePhoneRequest,
         requestOptions?: Phones.RequestOptions,
     ): core.HttpResponsePromise<Sonyk.PhoneResponse> {
-        return core.HttpResponsePromise.fromPromise(this.__createPhoneDeveloper(request, requestOptions));
+        return core.HttpResponsePromise.fromPromise(this.__createPhone(request, requestOptions));
     }
 
-    private async __createPhoneDeveloper(
-        request: Sonyk.CreatePhoneDeveloperRequest,
+    private async __createPhone(
+        request: Sonyk.CreatePhoneRequest,
         requestOptions?: Phones.RequestOptions,
     ): Promise<core.WithRawResponse<Sonyk.PhoneResponse>> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
@@ -214,16 +214,16 @@ export class Phones {
      * @param {Phones.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
-     *     await client.phones.getPhoneDeveloper("phoneId")
+     *     await client.phones.getPhone("phoneId")
      */
-    public getPhoneDeveloper(
+    public getPhone(
         phoneId: string,
         requestOptions?: Phones.RequestOptions,
     ): core.HttpResponsePromise<Sonyk.PhoneResponse> {
-        return core.HttpResponsePromise.fromPromise(this.__getPhoneDeveloper(phoneId, requestOptions));
+        return core.HttpResponsePromise.fromPromise(this.__getPhone(phoneId, requestOptions));
     }
 
-    private async __getPhoneDeveloper(
+    private async __getPhone(
         phoneId: string,
         requestOptions?: Phones.RequestOptions,
     ): Promise<core.WithRawResponse<Sonyk.PhoneResponse>> {
@@ -280,23 +280,23 @@ export class Phones {
      * Update phone details or agent assignment
      *
      * @param {string} phoneId
-     * @param {Sonyk.UpdatePhoneDeveloperRequest} request
+     * @param {Sonyk.UpdatePhoneRequest} request
      * @param {Phones.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
-     *     await client.phones.updatePhoneDeveloper("phoneId")
+     *     await client.phones.updatePhone("phoneId")
      */
-    public updatePhoneDeveloper(
+    public updatePhone(
         phoneId: string,
-        request: Sonyk.UpdatePhoneDeveloperRequest = {},
+        request: Sonyk.UpdatePhoneRequest = {},
         requestOptions?: Phones.RequestOptions,
     ): core.HttpResponsePromise<Sonyk.PhoneResponse> {
-        return core.HttpResponsePromise.fromPromise(this.__updatePhoneDeveloper(phoneId, request, requestOptions));
+        return core.HttpResponsePromise.fromPromise(this.__updatePhone(phoneId, request, requestOptions));
     }
 
-    private async __updatePhoneDeveloper(
+    private async __updatePhone(
         phoneId: string,
-        request: Sonyk.UpdatePhoneDeveloperRequest = {},
+        request: Sonyk.UpdatePhoneRequest = {},
         requestOptions?: Phones.RequestOptions,
     ): Promise<core.WithRawResponse<Sonyk.PhoneResponse>> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
@@ -358,16 +358,16 @@ export class Phones {
      * @param {Phones.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
-     *     await client.phones.deletePhoneDeveloper("phoneId")
+     *     await client.phones.deletePhone("phoneId")
      */
-    public deletePhoneDeveloper(
+    public deletePhone(
         phoneId: string,
         requestOptions?: Phones.RequestOptions,
     ): core.HttpResponsePromise<Sonyk.SuccessResponse> {
-        return core.HttpResponsePromise.fromPromise(this.__deletePhoneDeveloper(phoneId, requestOptions));
+        return core.HttpResponsePromise.fromPromise(this.__deletePhone(phoneId, requestOptions));
     }
 
-    private async __deletePhoneDeveloper(
+    private async __deletePhone(
         phoneId: string,
         requestOptions?: Phones.RequestOptions,
     ): Promise<core.WithRawResponse<Sonyk.SuccessResponse>> {
@@ -424,25 +424,25 @@ export class Phones {
      * Assign a phone number to a specific agent
      *
      * @param {string} phoneId
-     * @param {Sonyk.MapPhoneToAgentDeveloperRequest} request
+     * @param {Sonyk.MapPhoneToAgentRequest} request
      * @param {Phones.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
-     *     await client.phones.mapPhoneToAgentDeveloper("phoneId", {
+     *     await client.phones.mapPhoneToAgent("phoneId", {
      *         agentId: "agentId"
      *     })
      */
-    public mapPhoneToAgentDeveloper(
+    public mapPhoneToAgent(
         phoneId: string,
-        request: Sonyk.MapPhoneToAgentDeveloperRequest,
+        request: Sonyk.MapPhoneToAgentRequest,
         requestOptions?: Phones.RequestOptions,
     ): core.HttpResponsePromise<Sonyk.PhoneResponse> {
-        return core.HttpResponsePromise.fromPromise(this.__mapPhoneToAgentDeveloper(phoneId, request, requestOptions));
+        return core.HttpResponsePromise.fromPromise(this.__mapPhoneToAgent(phoneId, request, requestOptions));
     }
 
-    private async __mapPhoneToAgentDeveloper(
+    private async __mapPhoneToAgent(
         phoneId: string,
-        request: Sonyk.MapPhoneToAgentDeveloperRequest,
+        request: Sonyk.MapPhoneToAgentRequest,
         requestOptions?: Phones.RequestOptions,
     ): Promise<core.WithRawResponse<Sonyk.PhoneResponse>> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
@@ -504,16 +504,16 @@ export class Phones {
      * @param {Phones.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
-     *     await client.phones.unmapPhoneFromAgentDeveloper("phoneId")
+     *     await client.phones.unmapPhoneFromAgent("phoneId")
      */
-    public unmapPhoneFromAgentDeveloper(
+    public unmapPhoneFromAgent(
         phoneId: string,
         requestOptions?: Phones.RequestOptions,
     ): core.HttpResponsePromise<Sonyk.PhoneResponse> {
-        return core.HttpResponsePromise.fromPromise(this.__unmapPhoneFromAgentDeveloper(phoneId, requestOptions));
+        return core.HttpResponsePromise.fromPromise(this.__unmapPhoneFromAgent(phoneId, requestOptions));
     }
 
-    private async __unmapPhoneFromAgentDeveloper(
+    private async __unmapPhoneFromAgent(
         phoneId: string,
         requestOptions?: Phones.RequestOptions,
     ): Promise<core.WithRawResponse<Sonyk.PhoneResponse>> {

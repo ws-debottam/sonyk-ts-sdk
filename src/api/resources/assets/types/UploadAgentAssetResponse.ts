@@ -4,11 +4,11 @@
 
 import * as Sonyk from "../../../index.js";
 
-export interface UploadAgentAssetDeveloperResponse extends Sonyk.BaseResponse {
-    data?: UploadAgentAssetDeveloperResponse.Data;
+export interface UploadAgentAssetResponse extends Sonyk.BaseResponse {
+    data?: UploadAgentAssetResponse.Data;
 }
 
-export namespace UploadAgentAssetDeveloperResponse {
+export namespace UploadAgentAssetResponse {
     export interface Data {
         /** Unique identifier for the created asset */
         assetId?: number;

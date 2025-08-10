@@ -4,11 +4,11 @@
 
 import * as Sonyk from "../../../index.js";
 
-export interface GetAgentAssetContentDeveloperResponse extends Sonyk.BaseResponse {
-    data?: GetAgentAssetContentDeveloperResponse.Data;
+export interface GetAgentAssetContentResponse extends Sonyk.BaseResponse {
+    data?: GetAgentAssetContentResponse.Data;
 }
 
-export namespace GetAgentAssetContentDeveloperResponse {
+export namespace GetAgentAssetContentResponse {
     export interface Data {
         /** Asset identifier */
         assetId?: number;

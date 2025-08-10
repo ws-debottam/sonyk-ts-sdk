@@ -4,11 +4,11 @@
 
 import * as Sonyk from "../../../index.js";
 
-export interface DeleteAgentAssetDeveloperResponse extends Sonyk.SuccessResponse {
-    data?: DeleteAgentAssetDeveloperResponse.Data;
+export interface DeleteAgentAssetResponse extends Sonyk.SuccessResponse {
+    data?: DeleteAgentAssetResponse.Data;
 }
 
-export namespace DeleteAgentAssetDeveloperResponse {
+export namespace DeleteAgentAssetResponse {
     export interface Data {
         /** ID of the deleted asset */
         assetId?: number;

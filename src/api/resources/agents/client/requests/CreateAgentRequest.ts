@@ -28,7 +28,7 @@ import * as Sonyk from "../../../../index.js";
  *         }
  *     }
  */
-export interface CreateAgentDeveloperRequest {
+export interface CreateAgentRequest {
     /** Human-readable name for the agent */
     agent_name: string;
     agent_json: Sonyk.AgentConfiguration;

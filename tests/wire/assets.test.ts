@@ -6,7 +6,7 @@ import { mockServerPool } from "../mock-server/MockServerPool";
 import { SonykClient } from "../../src/Client";
 
 describe("Assets", () => {
-    test("listAgentAssetsDeveloper", async () => {
+    test("listAgentAssets", async () => {
         const server = mockServerPool.createServer();
         const client = new SonykClient({ apiKey: "test", environment: server.baseUrl });
 
@@ -37,7 +37,7 @@ describe("Assets", () => {
             .jsonBody(rawResponseBody)
             .build();
 
-        const response = await client.assets.listAgentAssetsDeveloper("agent_abc123def456", {
+        const response = await client.assets.listAgentAssets("agent_abc123def456", {
             search: "product documentation",
         });
         expect(response).toEqual({
@@ -68,7 +68,7 @@ describe("Assets", () => {
         });
     });
 
-    test("getAgentAssetDeveloper", async () => {
+    test("getAgentAssetDetails", async () => {
         const server = mockServerPool.createServer();
         const client = new SonykClient({ apiKey: "test", environment: server.baseUrl });
 
@@ -105,7 +105,7 @@ describe("Assets", () => {
             .jsonBody(rawResponseBody)
             .build();
 
-        const response = await client.assets.getAgentAssetDeveloper("agentId", 1);
+        const response = await client.assets.getAgentAssetDetails("agentId", 1);
         expect(response).toEqual({
             success: true,
             message: "message",
@@ -137,7 +137,7 @@ describe("Assets", () => {
         });
     });
 
-    test("updateAgentAssetDeveloper", async () => {
+    test("updateAgentAsset", async () => {
         const server = mockServerPool.createServer();
         const client = new SonykClient({ apiKey: "test", environment: server.baseUrl });
         const rawRequestBody = {};
@@ -156,7 +156,7 @@ describe("Assets", () => {
             .jsonBody(rawResponseBody)
             .build();
 
-        const response = await client.assets.updateAgentAssetDeveloper("agentId", 1);
+        const response = await client.assets.updateAgentAsset("agentId", 1);
         expect(response).toEqual({
             success: true,
             message: "message",
@@ -167,7 +167,7 @@ describe("Assets", () => {
         });
     });
 
-    test("deleteAgentAssetDeveloper", async () => {
+    test("deleteAgentAsset", async () => {
         const server = mockServerPool.createServer();
         const client = new SonykClient({ apiKey: "test", environment: server.baseUrl });
 
@@ -185,7 +185,7 @@ describe("Assets", () => {
             .jsonBody(rawResponseBody)
             .build();
 
-        const response = await client.assets.deleteAgentAssetDeveloper("agentId", 1);
+        const response = await client.assets.deleteAgentAsset("agentId", 1);
         expect(response).toEqual({
             success: true,
             message: "message",
@@ -197,7 +197,7 @@ describe("Assets", () => {
         });
     });
 
-    test("createAgentTextAssetDeveloper", async () => {
+    test("createAgentTextAsset", async () => {
         const server = mockServerPool.createServer();
         const client = new SonykClient({ apiKey: "test", environment: server.baseUrl });
         const rawRequestBody = {
@@ -231,7 +231,7 @@ describe("Assets", () => {
             .jsonBody(rawResponseBody)
             .build();
 
-        const response = await client.assets.createAgentTextAssetDeveloper("agentId", {
+        const response = await client.assets.createAgentTextAsset("agentId", {
             text: "# Customer Service FAQ - Updated January 2025\n\n## Business Information\n\n### Q: What are your business hours?\nA: We are open Monday to Friday from 9 AM to 6 PM EST. Weekend support is available via email only.\n\n### Q: Where are you located?\nA: Our headquarters is at 123 Business St, City, State 12345. We also have locations in Chicago and Miami.\n\n## Product Support\n\n### Q: How do I return a product?\nA: Returns are easy! Visit our website's return portal, print a shipping label, and send the item back within 30 days. Refunds are processed within 5-7 business days.\n\n### Q: What's your warranty policy?\nA: All products come with a standard 1-year warranty. Extended warranties up to 3 years are available for purchase.\n\n## Account Management\n\n### Q: How do I reset my password?\nA: Click 'Forgot Password' on the login page, enter your email, and follow the instructions sent to your inbox. The reset link expires in 24 hours.\n\n### Q: Can I change my subscription plan?\nA: Yes! Log into your account, go to Settings > Subscription, and select your new plan. Changes take effect immediately.\n",
         });
         expect(response).toEqual({
@@ -255,7 +255,7 @@ describe("Assets", () => {
         });
     });
 
-    test("getAgentAssetContentDeveloper", async () => {
+    test("getAgentAssetContent", async () => {
         const server = mockServerPool.createServer();
         const client = new SonykClient({ apiKey: "test", environment: server.baseUrl });
 
@@ -282,7 +282,7 @@ describe("Assets", () => {
             .jsonBody(rawResponseBody)
             .build();
 
-        const response = await client.assets.getAgentAssetContentDeveloper("agentId", 1);
+        const response = await client.assets.getAgentAssetContent("agentId", 1);
         expect(response).toEqual({
             success: true,
             message: "message",
@@ -300,7 +300,7 @@ describe("Assets", () => {
         });
     });
 
-    test("searchAgentAssetsInternal", async () => {
+    test("searchAgentAssets", async () => {
         const server = mockServerPool.createServer();
         const client = new SonykClient({ apiKey: "test", environment: server.baseUrl });
         const rawRequestBody = { query: "How do I reset my password?" };
@@ -352,7 +352,7 @@ describe("Assets", () => {
             .jsonBody(rawResponseBody)
             .build();
 
-        const response = await client.assets.searchAgentAssetsInternal("agentId", {
+        const response = await client.assets.searchAgentAssets("agentId", {
             query: "How do I reset my password?",
         });
         expect(response).toEqual({

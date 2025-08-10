@@ -1,5 +1,5 @@
-export { type ListAgentAssetsDeveloperRequest } from "./ListAgentAssetsDeveloperRequest.js";
-export { type UpdateAgentAssetDeveloperRequest } from "./UpdateAgentAssetDeveloperRequest.js";
-export { type UploadAgentAssetDeveloperRequest } from "./UploadAgentAssetDeveloperRequest.js";
-export { type CreateAgentTextAssetDeveloperRequest } from "./CreateAgentTextAssetDeveloperRequest.js";
-export { type SearchAgentAssetsInternalRequest } from "./SearchAgentAssetsInternalRequest.js";
+export { type ListAgentAssetsRequest } from "./ListAgentAssetsRequest.js";
+export { type UpdateAgentAssetRequest } from "./UpdateAgentAssetRequest.js";
+export { type UploadAgentAssetRequest } from "./UploadAgentAssetRequest.js";
+export { type CreateAgentTextAssetRequest } from "./CreateAgentTextAssetRequest.js";
+export { type SearchAgentAssetsRequest } from "./SearchAgentAssetsRequest.js";

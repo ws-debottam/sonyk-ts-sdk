@@ -2,7 +2,7 @@
 
 ## Agents
 
-<details><summary><code>client.agents.<a href="/src/api/resources/agents/client/Client.ts">listAgentsDeveloper</a>({ ...params }) -> Sonyk.AgentListResponse</code></summary>
+<details><summary><code>client.agents.<a href="/src/api/resources/agents/client/Client.ts">listAgents</a>({ ...params }) -> Sonyk.AgentListResponse</code></summary>
 <dl>
 <dd>
 
@@ -30,7 +30,7 @@ Retrieve all agents for the organization
 <dd>
 
 ```typescript
-await client.agents.listAgentsDeveloper();
+await client.agents.listAgents();
 ```
 
 </dd>
@@ -46,7 +46,7 @@ await client.agents.listAgentsDeveloper();
 <dl>
 <dd>
 
-**request:** `Sonyk.ListAgentsDeveloperRequest`
+**request:** `Sonyk.ListAgentsRequest`
 
 </dd>
 </dl>
@@ -65,7 +65,7 @@ await client.agents.listAgentsDeveloper();
 </dl>
 </details>
 
-<details><summary><code>client.agents.<a href="/src/api/resources/agents/client/Client.ts">createAgentDeveloper</a>({ ...params }) -> Sonyk.AgentResponse</code></summary>
+<details><summary><code>client.agents.<a href="/src/api/resources/agents/client/Client.ts">createAgent</a>({ ...params }) -> Sonyk.AgentResponse</code></summary>
 <dl>
 <dd>
 
@@ -93,7 +93,7 @@ Create a new AI voice agent with specified configuration
 <dd>
 
 ```typescript
-await client.agents.createAgentDeveloper({
+await client.agents.createAgent({
     agent_name: "Restaurant Receptionist",
     agent_json: {
         llm: {
@@ -130,7 +130,7 @@ await client.agents.createAgentDeveloper({
 <dl>
 <dd>
 
-**request:** `Sonyk.CreateAgentDeveloperRequest`
+**request:** `Sonyk.CreateAgentRequest`
 
 </dd>
 </dl>
@@ -149,7 +149,7 @@ await client.agents.createAgentDeveloper({
 </dl>
 </details>
 
-<details><summary><code>client.agents.<a href="/src/api/resources/agents/client/Client.ts">getAgentDeveloper</a>(agentId) -> Sonyk.AgentDetailedResponse</code></summary>
+<details><summary><code>client.agents.<a href="/src/api/resources/agents/client/Client.ts">getAgent</a>(agentId) -> Sonyk.AgentDetailedResponse</code></summary>
 <dl>
 <dd>
 
@@ -177,7 +177,7 @@ Retrieve a specific agent by ID with full configuration
 <dd>
 
 ```typescript
-await client.agents.getAgentDeveloper("agent_abc123def456");
+await client.agents.getAgent("agent_abc123def456");
 ```
 
 </dd>
@@ -212,7 +212,7 @@ await client.agents.getAgentDeveloper("agent_abc123def456");
 </dl>
 </details>
 
-<details><summary><code>client.agents.<a href="/src/api/resources/agents/client/Client.ts">updateAgentDeveloper</a>(agentId, { ...params }) -> Sonyk.AgentResponse</code></summary>
+<details><summary><code>client.agents.<a href="/src/api/resources/agents/client/Client.ts">updateAgent</a>(agentId, { ...params }) -> Sonyk.AgentResponse</code></summary>
 <dl>
 <dd>
 
@@ -241,7 +241,7 @@ allowing partial updates while preserving existing settings.
 <dd>
 
 ```typescript
-await client.agents.updateAgentDeveloper("agentId");
+await client.agents.updateAgent("agentId");
 ```
 
 </dd>
@@ -265,7 +265,7 @@ await client.agents.updateAgentDeveloper("agentId");
 <dl>
 <dd>
 
-**request:** `Sonyk.UpdateAgentDeveloperRequest`
+**request:** `Sonyk.UpdateAgentRequest`
 
 </dd>
 </dl>
@@ -284,7 +284,7 @@ await client.agents.updateAgentDeveloper("agentId");
 </dl>
 </details>
 
-<details><summary><code>client.agents.<a href="/src/api/resources/agents/client/Client.ts">deleteAgentDeveloper</a>(agentId) -> Sonyk.SuccessResponse</code></summary>
+<details><summary><code>client.agents.<a href="/src/api/resources/agents/client/Client.ts">deleteAgent</a>(agentId) -> Sonyk.SuccessResponse</code></summary>
 <dl>
 <dd>
 
@@ -312,7 +312,7 @@ Delete an agent (permanent deletion)
 <dd>
 
 ```typescript
-await client.agents.deleteAgentDeveloper("agentId");
+await client.agents.deleteAgent("agentId");
 ```
 
 </dd>
@@ -347,7 +347,7 @@ await client.agents.deleteAgentDeveloper("agentId");
 </dl>
 </details>
 
-<details><summary><code>client.agents.<a href="/src/api/resources/agents/client/Client.ts">getAgentToolsDeveloper</a>(agentId) -> Sonyk.ToolListResponse</code></summary>
+<details><summary><code>client.agents.<a href="/src/api/resources/agents/client/Client.ts">getAgentTools</a>(agentId) -> Sonyk.ToolListResponse</code></summary>
 <dl>
 <dd>
 
@@ -375,7 +375,7 @@ Retrieve all tools assigned to a specific agent
 <dd>
 
 ```typescript
-await client.agents.getAgentToolsDeveloper("agentId");
+await client.agents.getAgentTools("agentId");
 ```
 
 </dd>
@@ -410,7 +410,7 @@ await client.agents.getAgentToolsDeveloper("agentId");
 </dl>
 </details>
 
-<details><summary><code>client.agents.<a href="/src/api/resources/agents/client/Client.ts">assignToolToAgentDeveloper</a>(agentId, { ...params }) -> Sonyk.SuccessResponse</code></summary>
+<details><summary><code>client.agents.<a href="/src/api/resources/agents/client/Client.ts">assignToolToAgent</a>(agentId, { ...params }) -> Sonyk.SuccessResponse</code></summary>
 <dl>
 <dd>
 
@@ -438,7 +438,7 @@ Assign an existing tool to an agent
 <dd>
 
 ```typescript
-await client.agents.assignToolToAgentDeveloper("agentId", {
+await client.agents.assignToolToAgent("agentId", {
     toolId: "tool_123abc456def",
 });
 ```
@@ -464,7 +464,7 @@ await client.agents.assignToolToAgentDeveloper("agentId", {
 <dl>
 <dd>
 
-**request:** `Sonyk.AssignToolToAgentDeveloperRequest`
+**request:** `Sonyk.AssignToolToAgentRequest`
 
 </dd>
 </dl>
@@ -483,7 +483,7 @@ await client.agents.assignToolToAgentDeveloper("agentId", {
 </dl>
 </details>
 
-<details><summary><code>client.agents.<a href="/src/api/resources/agents/client/Client.ts">unassignToolFromAgentDeveloper</a>(agentId, { ...params }) -> Sonyk.SuccessResponse</code></summary>
+<details><summary><code>client.agents.<a href="/src/api/resources/agents/client/Client.ts">unassignToolFromAgent</a>(agentId, { ...params }) -> Sonyk.SuccessResponse</code></summary>
 <dl>
 <dd>
 
@@ -511,7 +511,7 @@ Remove a tool assignment from an agent
 <dd>
 
 ```typescript
-await client.agents.unassignToolFromAgentDeveloper("agentId", {
+await client.agents.unassignToolFromAgent("agentId", {
     toolId: "toolId",
 });
 ```
@@ -537,7 +537,7 @@ await client.agents.unassignToolFromAgentDeveloper("agentId", {
 <dl>
 <dd>
 
-**request:** `Sonyk.UnassignToolFromAgentDeveloperRequest`
+**request:** `Sonyk.UnassignToolFromAgentRequest`
 
 </dd>
 </dl>
@@ -558,7 +558,7 @@ await client.agents.unassignToolFromAgentDeveloper("agentId", {
 
 ## Phones
 
-<details><summary><code>client.phones.<a href="/src/api/resources/phones/client/Client.ts">listPhonesDeveloper</a>({ ...params }) -> Sonyk.PhoneListResponse</code></summary>
+<details><summary><code>client.phones.<a href="/src/api/resources/phones/client/Client.ts">listPhones</a>({ ...params }) -> Sonyk.PhoneListResponse</code></summary>
 <dl>
 <dd>
 
@@ -586,7 +586,7 @@ Retrieve all phone numbers for the organization
 <dd>
 
 ```typescript
-await client.phones.listPhonesDeveloper({
+await client.phones.listPhones({
     provider: "twilio",
 });
 ```
@@ -604,7 +604,7 @@ await client.phones.listPhonesDeveloper({
 <dl>
 <dd>
 
-**request:** `Sonyk.ListPhonesDeveloperRequest`
+**request:** `Sonyk.ListPhonesRequest`
 
 </dd>
 </dl>
@@ -623,7 +623,7 @@ await client.phones.listPhonesDeveloper({
 </dl>
 </details>
 
-<details><summary><code>client.phones.<a href="/src/api/resources/phones/client/Client.ts">createPhoneDeveloper</a>({ ...params }) -> Sonyk.PhoneResponse</code></summary>
+<details><summary><code>client.phones.<a href="/src/api/resources/phones/client/Client.ts">createPhone</a>({ ...params }) -> Sonyk.PhoneResponse</code></summary>
 <dl>
 <dd>
 
@@ -651,7 +651,7 @@ Add a new phone number to the organization
 <dd>
 
 ```typescript
-await client.phones.createPhoneDeveloper({
+await client.phones.createPhone({
     phoneNumber: "+1234567890",
     provider: "twilio",
 });
@@ -670,7 +670,7 @@ await client.phones.createPhoneDeveloper({
 <dl>
 <dd>
 
-**request:** `Sonyk.CreatePhoneDeveloperRequest`
+**request:** `Sonyk.CreatePhoneRequest`
 
 </dd>
 </dl>
@@ -689,7 +689,7 @@ await client.phones.createPhoneDeveloper({
 </dl>
 </details>
 
-<details><summary><code>client.phones.<a href="/src/api/resources/phones/client/Client.ts">getPhoneDeveloper</a>(phoneId) -> Sonyk.PhoneResponse</code></summary>
+<details><summary><code>client.phones.<a href="/src/api/resources/phones/client/Client.ts">getPhone</a>(phoneId) -> Sonyk.PhoneResponse</code></summary>
 <dl>
 <dd>
 
@@ -717,7 +717,7 @@ Retrieve a specific phone by ID
 <dd>
 
 ```typescript
-await client.phones.getPhoneDeveloper("phoneId");
+await client.phones.getPhone("phoneId");
 ```
 
 </dd>
@@ -752,7 +752,7 @@ await client.phones.getPhoneDeveloper("phoneId");
 </dl>
 </details>
 
-<details><summary><code>client.phones.<a href="/src/api/resources/phones/client/Client.ts">updatePhoneDeveloper</a>(phoneId, { ...params }) -> Sonyk.PhoneResponse</code></summary>
+<details><summary><code>client.phones.<a href="/src/api/resources/phones/client/Client.ts">updatePhone</a>(phoneId, { ...params }) -> Sonyk.PhoneResponse</code></summary>
 <dl>
 <dd>
 
@@ -780,7 +780,7 @@ Update phone details or agent assignment
 <dd>
 
 ```typescript
-await client.phones.updatePhoneDeveloper("phoneId");
+await client.phones.updatePhone("phoneId");
 ```
 
 </dd>
@@ -804,7 +804,7 @@ await client.phones.updatePhoneDeveloper("phoneId");
 <dl>
 <dd>
 
-**request:** `Sonyk.UpdatePhoneDeveloperRequest`
+**request:** `Sonyk.UpdatePhoneRequest`
 
 </dd>
 </dl>
@@ -823,7 +823,7 @@ await client.phones.updatePhoneDeveloper("phoneId");
 </dl>
 </details>
 
-<details><summary><code>client.phones.<a href="/src/api/resources/phones/client/Client.ts">deletePhoneDeveloper</a>(phoneId) -> Sonyk.SuccessResponse</code></summary>
+<details><summary><code>client.phones.<a href="/src/api/resources/phones/client/Client.ts">deletePhone</a>(phoneId) -> Sonyk.SuccessResponse</code></summary>
 <dl>
 <dd>
 
@@ -851,7 +851,7 @@ Deactivate a phone number
 <dd>
 
 ```typescript
-await client.phones.deletePhoneDeveloper("phoneId");
+await client.phones.deletePhone("phoneId");
 ```
 
 </dd>
@@ -886,7 +886,7 @@ await client.phones.deletePhoneDeveloper("phoneId");
 </dl>
 </details>
 
-<details><summary><code>client.phones.<a href="/src/api/resources/phones/client/Client.ts">mapPhoneToAgentDeveloper</a>(phoneId, { ...params }) -> Sonyk.PhoneResponse</code></summary>
+<details><summary><code>client.phones.<a href="/src/api/resources/phones/client/Client.ts">mapPhoneToAgent</a>(phoneId, { ...params }) -> Sonyk.PhoneResponse</code></summary>
 <dl>
 <dd>
 
@@ -914,7 +914,7 @@ Assign a phone number to a specific agent
 <dd>
 
 ```typescript
-await client.phones.mapPhoneToAgentDeveloper("phoneId", {
+await client.phones.mapPhoneToAgent("phoneId", {
     agentId: "agentId",
 });
 ```
@@ -940,7 +940,7 @@ await client.phones.mapPhoneToAgentDeveloper("phoneId", {
 <dl>
 <dd>
 
-**request:** `Sonyk.MapPhoneToAgentDeveloperRequest`
+**request:** `Sonyk.MapPhoneToAgentRequest`
 
 </dd>
 </dl>
@@ -959,7 +959,7 @@ await client.phones.mapPhoneToAgentDeveloper("phoneId", {
 </dl>
 </details>
 
-<details><summary><code>client.phones.<a href="/src/api/resources/phones/client/Client.ts">unmapPhoneFromAgentDeveloper</a>(phoneId) -> Sonyk.PhoneResponse</code></summary>
+<details><summary><code>client.phones.<a href="/src/api/resources/phones/client/Client.ts">unmapPhoneFromAgent</a>(phoneId) -> Sonyk.PhoneResponse</code></summary>
 <dl>
 <dd>
 
@@ -987,7 +987,7 @@ Remove agent assignment from a phone number
 <dd>
 
 ```typescript
-await client.phones.unmapPhoneFromAgentDeveloper("phoneId");
+await client.phones.unmapPhoneFromAgent("phoneId");
 ```
 
 </dd>
@@ -1024,7 +1024,7 @@ await client.phones.unmapPhoneFromAgentDeveloper("phoneId");
 
 ## Tools
 
-<details><summary><code>client.tools.<a href="/src/api/resources/tools/client/Client.ts">listToolsDeveloper</a>({ ...params }) -> Sonyk.ToolListResponse</code></summary>
+<details><summary><code>client.tools.<a href="/src/api/resources/tools/client/Client.ts">listTools</a>({ ...params }) -> Sonyk.ToolListResponse</code></summary>
 <dl>
 <dd>
 
@@ -1052,7 +1052,7 @@ Retrieve all available tools for the organization
 <dd>
 
 ```typescript
-await client.tools.listToolsDeveloper();
+await client.tools.listTools();
 ```
 
 </dd>
@@ -1068,7 +1068,7 @@ await client.tools.listToolsDeveloper();
 <dl>
 <dd>
 
-**request:** `Sonyk.ListToolsDeveloperRequest`
+**request:** `Sonyk.ListToolsRequest`
 
 </dd>
 </dl>
@@ -1087,7 +1087,7 @@ await client.tools.listToolsDeveloper();
 </dl>
 </details>
 
-<details><summary><code>client.tools.<a href="/src/api/resources/tools/client/Client.ts">createToolDeveloper</a>({ ...params }) -> Sonyk.ToolResponse</code></summary>
+<details><summary><code>client.tools.<a href="/src/api/resources/tools/client/Client.ts">createTool</a>({ ...params }) -> Sonyk.ToolResponse</code></summary>
 <dl>
 <dd>
 
@@ -1115,7 +1115,7 @@ Create a new tool/function that can be assigned to agents
 <dd>
 
 ```typescript
-await client.tools.createToolDeveloper({
+await client.tools.createTool({
     tool_name: "make_reservation",
     tool_description:
         "Creates a new restaurant reservation with the specified date, time, party size, and customer details",
@@ -1156,7 +1156,7 @@ await client.tools.createToolDeveloper({
 </dl>
 </details>
 
-<details><summary><code>client.tools.<a href="/src/api/resources/tools/client/Client.ts">getToolDeveloper</a>(toolId) -> Sonyk.ToolResponse</code></summary>
+<details><summary><code>client.tools.<a href="/src/api/resources/tools/client/Client.ts">getTool</a>(toolId) -> Sonyk.ToolResponse</code></summary>
 <dl>
 <dd>
 
@@ -1184,7 +1184,7 @@ Retrieve a specific tool by ID
 <dd>
 
 ```typescript
-await client.tools.getToolDeveloper("toolId");
+await client.tools.getTool("toolId");
 ```
 
 </dd>
@@ -1219,7 +1219,7 @@ await client.tools.getToolDeveloper("toolId");
 </dl>
 </details>
 
-<details><summary><code>client.tools.<a href="/src/api/resources/tools/client/Client.ts">updateToolDeveloper</a>(toolId, { ...params }) -> Sonyk.ToolResponse</code></summary>
+<details><summary><code>client.tools.<a href="/src/api/resources/tools/client/Client.ts">updateTool</a>(toolId, { ...params }) -> Sonyk.ToolResponse</code></summary>
 <dl>
 <dd>
 
@@ -1247,7 +1247,7 @@ Update tool configuration
 <dd>
 
 ```typescript
-await client.tools.updateToolDeveloper("toolId", {
+await client.tools.updateTool("toolId", {
     tool_name: "make_reservation",
     tool_description:
         "Creates a new restaurant reservation with the specified date, time, party size, and customer details",
@@ -1296,7 +1296,7 @@ await client.tools.updateToolDeveloper("toolId", {
 </dl>
 </details>
 
-<details><summary><code>client.tools.<a href="/src/api/resources/tools/client/Client.ts">deleteToolDeveloper</a>(toolId) -> Sonyk.SuccessResponse</code></summary>
+<details><summary><code>client.tools.<a href="/src/api/resources/tools/client/Client.ts">deleteTool</a>(toolId) -> Sonyk.SuccessResponse</code></summary>
 <dl>
 <dd>
 
@@ -1324,7 +1324,7 @@ Delete a tool
 <dd>
 
 ```typescript
-await client.tools.deleteToolDeveloper("toolId");
+await client.tools.deleteTool("toolId");
 ```
 
 </dd>
@@ -1361,7 +1361,7 @@ await client.tools.deleteToolDeveloper("toolId");
 
 ## Assets
 
-<details><summary><code>client.assets.<a href="/src/api/resources/assets/client/Client.ts">listAgentAssetsDeveloper</a>(agentId, { ...params }) -> Sonyk.AssetListResponse</code></summary>
+<details><summary><code>client.assets.<a href="/src/api/resources/assets/client/Client.ts">listAgentAssets</a>(agentId, { ...params }) -> Sonyk.AssetListResponse</code></summary>
 <dl>
 <dd>
 
@@ -1414,7 +1414,7 @@ during conversations. The system supports multiple asset types and intelligent p
 <dd>
 
 ```typescript
-await client.assets.listAgentAssetsDeveloper("agent_abc123def456", {
+await client.assets.listAgentAssets("agent_abc123def456", {
     search: "product documentation",
 });
 ```
@@ -1440,7 +1440,7 @@ await client.assets.listAgentAssetsDeveloper("agent_abc123def456", {
 <dl>
 <dd>
 
-**request:** `Sonyk.ListAgentAssetsDeveloperRequest`
+**request:** `Sonyk.ListAgentAssetsRequest`
 
 </dd>
 </dl>
@@ -1459,7 +1459,7 @@ await client.assets.listAgentAssetsDeveloper("agent_abc123def456", {
 </dl>
 </details>
 
-<details><summary><code>client.assets.<a href="/src/api/resources/assets/client/Client.ts">getAgentAssetDeveloper</a>(agentId, assetId) -> Sonyk.AssetDetailedResponse</code></summary>
+<details><summary><code>client.assets.<a href="/src/api/resources/assets/client/Client.ts">getAgentAssetDetails</a>(agentId, assetId) -> Sonyk.AssetDetailedResponse</code></summary>
 <dl>
 <dd>
 
@@ -1503,7 +1503,7 @@ The response includes details about how the asset was processed:
 <dd>
 
 ```typescript
-await client.assets.getAgentAssetDeveloper("agentId", 1);
+await client.assets.getAgentAssetDetails("agentId", 1);
 ```
 
 </dd>
@@ -1546,7 +1546,7 @@ await client.assets.getAgentAssetDeveloper("agentId", 1);
 </dl>
 </details>
 
-<details><summary><code>client.assets.<a href="/src/api/resources/assets/client/Client.ts">updateAgentAssetDeveloper</a>(agentId, assetId, { ...params }) -> Sonyk.UpdateAgentAssetDeveloperResponse</code></summary>
+<details><summary><code>client.assets.<a href="/src/api/resources/assets/client/Client.ts">updateAgentAsset</a>(agentId, assetId, { ...params }) -> Sonyk.UpdateAgentAssetResponse</code></summary>
 <dl>
 <dd>
 
@@ -1594,7 +1594,7 @@ When text content is updated:
 <dd>
 
 ```typescript
-await client.assets.updateAgentAssetDeveloper("agentId", 1);
+await client.assets.updateAgentAsset("agentId", 1);
 ```
 
 </dd>
@@ -1626,7 +1626,7 @@ await client.assets.updateAgentAssetDeveloper("agentId", 1);
 <dl>
 <dd>
 
-**request:** `Sonyk.UpdateAgentAssetDeveloperRequest`
+**request:** `Sonyk.UpdateAgentAssetRequest`
 
 </dd>
 </dl>
@@ -1645,7 +1645,7 @@ await client.assets.updateAgentAssetDeveloper("agentId", 1);
 </dl>
 </details>
 
-<details><summary><code>client.assets.<a href="/src/api/resources/assets/client/Client.ts">deleteAgentAssetDeveloper</a>(agentId, assetId) -> Sonyk.DeleteAgentAssetDeveloperResponse</code></summary>
+<details><summary><code>client.assets.<a href="/src/api/resources/assets/client/Client.ts">deleteAgentAsset</a>(agentId, assetId) -> Sonyk.DeleteAgentAssetResponse</code></summary>
 <dl>
 <dd>
 
@@ -1693,7 +1693,7 @@ Permanently delete an asset from the agent's knowledge base.
 <dd>
 
 ```typescript
-await client.assets.deleteAgentAssetDeveloper("agentId", 1);
+await client.assets.deleteAgentAsset("agentId", 1);
 ```
 
 </dd>
@@ -1736,7 +1736,7 @@ await client.assets.deleteAgentAssetDeveloper("agentId", 1);
 </dl>
 </details>
 
-<details><summary><code>client.assets.<a href="/src/api/resources/assets/client/Client.ts">uploadAgentAssetDeveloper</a>(agentId, { ...params }) -> Sonyk.UploadAgentAssetDeveloperResponse</code></summary>
+<details><summary><code>client.assets.<a href="/src/api/resources/assets/client/Client.ts">uploadAgentAsset</a>(agentId, { ...params }) -> Sonyk.UploadAgentAssetResponse</code></summary>
 <dl>
 <dd>
 
@@ -1836,7 +1836,7 @@ Upload a file to create a new knowledge base asset for the agent with advanced A
 <dd>
 
 ```typescript
-await client.assets.uploadAgentAssetDeveloper("agentId", {
+await client.assets.uploadAgentAsset("agentId", {
     file: fs.createReadStream("/path/to/your/file"),
 });
 ```
@@ -1862,7 +1862,7 @@ await client.assets.uploadAgentAssetDeveloper("agentId", {
 <dl>
 <dd>
 
-**request:** `Sonyk.UploadAgentAssetDeveloperRequest`
+**request:** `Sonyk.UploadAgentAssetRequest`
 
 </dd>
 </dl>
@@ -1881,7 +1881,7 @@ await client.assets.uploadAgentAssetDeveloper("agentId", {
 </dl>
 </details>
 
-<details><summary><code>client.assets.<a href="/src/api/resources/assets/client/Client.ts">createAgentTextAssetDeveloper</a>(agentId, { ...params }) -> Sonyk.CreateAgentTextAssetDeveloperResponse</code></summary>
+<details><summary><code>client.assets.<a href="/src/api/resources/assets/client/Client.ts">createAgentTextAsset</a>(agentId, { ...params }) -> Sonyk.CreateAgentTextAssetResponse</code></summary>
 <dl>
 <dd>
 
@@ -2011,7 +2011,7 @@ Provide agents with conversation templates and best practices:
 <dd>
 
 ```typescript
-await client.assets.createAgentTextAssetDeveloper("agentId", {
+await client.assets.createAgentTextAsset("agentId", {
     text: "# Customer Service FAQ - Updated January 2025\n\n## Business Information\n\n### Q: What are your business hours?\nA: We are open Monday to Friday from 9 AM to 6 PM EST. Weekend support is available via email only.\n\n### Q: Where are you located?\nA: Our headquarters is at 123 Business St, City, State 12345. We also have locations in Chicago and Miami.\n\n## Product Support\n\n### Q: How do I return a product?\nA: Returns are easy! Visit our website's return portal, print a shipping label, and send the item back within 30 days. Refunds are processed within 5-7 business days.\n\n### Q: What's your warranty policy?\nA: All products come with a standard 1-year warranty. Extended warranties up to 3 years are available for purchase.\n\n## Account Management\n\n### Q: How do I reset my password?\nA: Click 'Forgot Password' on the login page, enter your email, and follow the instructions sent to your inbox. The reset link expires in 24 hours.\n\n### Q: Can I change my subscription plan?\nA: Yes! Log into your account, go to Settings > Subscription, and select your new plan. Changes take effect immediately.\n",
 });
 ```
@@ -2037,7 +2037,7 @@ await client.assets.createAgentTextAssetDeveloper("agentId", {
 <dl>
 <dd>
 
-**request:** `Sonyk.CreateAgentTextAssetDeveloperRequest`
+**request:** `Sonyk.CreateAgentTextAssetRequest`
 
 </dd>
 </dl>
@@ -2056,7 +2056,7 @@ await client.assets.createAgentTextAssetDeveloper("agentId", {
 </dl>
 </details>
 
-<details><summary><code>client.assets.<a href="/src/api/resources/assets/client/Client.ts">getAgentAssetContentDeveloper</a>(agentId, assetId) -> Sonyk.GetAgentAssetContentDeveloperResponse</code></summary>
+<details><summary><code>client.assets.<a href="/src/api/resources/assets/client/Client.ts">getAgentAssetContent</a>(agentId, assetId) -> Sonyk.GetAgentAssetContentResponse</code></summary>
 <dl>
 <dd>
 
@@ -2139,7 +2139,7 @@ The response includes both the content and useful metadata:
 <dd>
 
 ```typescript
-await client.assets.getAgentAssetContentDeveloper("agentId", 1);
+await client.assets.getAgentAssetContent("agentId", 1);
 ```
 
 </dd>
@@ -2182,7 +2182,7 @@ await client.assets.getAgentAssetContentDeveloper("agentId", 1);
 </dl>
 </details>
 
-<details><summary><code>client.assets.<a href="/src/api/resources/assets/client/Client.ts">searchAgentAssetsInternal</a>(agentId, { ...params }) -> Sonyk.SearchAgentAssetsInternalResponse</code></summary>
+<details><summary><code>client.assets.<a href="/src/api/resources/assets/client/Client.ts">searchAgentAssets</a>(agentId, { ...params }) -> Sonyk.SearchAgentAssetsResponse</code></summary>
 <dl>
 <dd>
 
@@ -2290,7 +2290,7 @@ Controls how closely results must match your query:
 <dd>
 
 ```typescript
-await client.assets.searchAgentAssetsInternal("agentId", {
+await client.assets.searchAgentAssets("agentId", {
     query: "How do I reset my password?",
 });
 ```
@@ -2316,7 +2316,7 @@ await client.assets.searchAgentAssetsInternal("agentId", {
 <dl>
 <dd>
 
-**request:** `Sonyk.SearchAgentAssetsInternalRequest`
+**request:** `Sonyk.SearchAgentAssetsRequest`
 
 </dd>
 </dl>
@@ -2337,7 +2337,7 @@ await client.assets.searchAgentAssetsInternal("agentId", {
 
 ## Calls
 
-<details><summary><code>client.calls.<a href="/src/api/resources/calls/client/Client.ts">initiateCoreCall</a>({ ...params }) -> Sonyk.CoreCallResponse</code></summary>
+<details><summary><code>client.calls.<a href="/src/api/resources/calls/client/Client.ts">initiateCall</a>({ ...params }) -> Sonyk.CoreCallResponse</code></summary>
 <dl>
 <dd>
 
@@ -2366,7 +2366,7 @@ Validates permissions and credits, then forwards request to core.sonyk.io.
 <dd>
 
 ```typescript
-await client.calls.initiateCoreCall({
+await client.calls.initiateCall({
     agentId: "68572764-2437-42ce-a5ce-02451e9df97c",
     toNumber: "+919831222222",
 });
@@ -2385,7 +2385,7 @@ await client.calls.initiateCoreCall({
 <dl>
 <dd>
 
-**request:** `Sonyk.InitiateCoreCallRequest`
+**request:** `Sonyk.InitiateCallRequest`
 
 </dd>
 </dl>

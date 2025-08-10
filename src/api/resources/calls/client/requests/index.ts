@@ -1,1 +1,1 @@
-export { type InitiateCoreCallRequest } from "./InitiateCoreCallRequest.js";
+export { type InitiateCallRequest } from "./InitiateCallRequest.js";

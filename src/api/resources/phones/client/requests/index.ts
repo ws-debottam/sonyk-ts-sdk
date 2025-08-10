@@ -1,4 +1,4 @@
-export { type ListPhonesDeveloperRequest } from "./ListPhonesDeveloperRequest.js";
-export { type CreatePhoneDeveloperRequest } from "./CreatePhoneDeveloperRequest.js";
-export { type UpdatePhoneDeveloperRequest } from "./UpdatePhoneDeveloperRequest.js";
-export { type MapPhoneToAgentDeveloperRequest } from "./MapPhoneToAgentDeveloperRequest.js";
+export { type ListPhonesRequest } from "./ListPhonesRequest.js";
+export { type CreatePhoneRequest } from "./CreatePhoneRequest.js";
+export { type UpdatePhoneRequest } from "./UpdatePhoneRequest.js";
+export { type MapPhoneToAgentRequest } from "./MapPhoneToAgentRequest.js";

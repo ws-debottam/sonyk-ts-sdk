@@ -8,7 +8,7 @@
  *         query: "How do I reset my password?"
  *     }
  */
-export interface SearchAgentAssetsInternalRequest {
+export interface SearchAgentAssetsRequest {
     /** Search query for finding relevant content */
     query: string;
     /** Maximum number of results to return */
@@ -19,10 +19,10 @@ export interface SearchAgentAssetsInternalRequest {
      */
     threshold?: number;
     /** Filter results by chunk type (optional) */
-    type?: SearchAgentAssetsInternalRequest.Type;
+    type?: SearchAgentAssetsRequest.Type;
 }
 
-export namespace SearchAgentAssetsInternalRequest {
+export namespace SearchAgentAssetsRequest {
     /**
      * Filter results by chunk type (optional)
      */

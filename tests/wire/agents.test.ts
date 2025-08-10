@@ -6,7 +6,7 @@ import { mockServerPool } from "../mock-server/MockServerPool";
 import { SonykClient } from "../../src/Client";
 
 describe("Agents", () => {
-    test("listAgentsDeveloper", async () => {
+    test("listAgents", async () => {
         const server = mockServerPool.createServer();
         const client = new SonykClient({ apiKey: "test", environment: server.baseUrl });
 
@@ -53,7 +53,7 @@ describe("Agents", () => {
             .jsonBody(rawResponseBody)
             .build();
 
-        const response = await client.agents.listAgentsDeveloper();
+        const response = await client.agents.listAgents();
         expect(response).toEqual({
             success: true,
             message: "message",
@@ -106,7 +106,7 @@ describe("Agents", () => {
         });
     });
 
-    test("createAgentDeveloper", async () => {
+    test("createAgent", async () => {
         const server = mockServerPool.createServer();
         const client = new SonykClient({ apiKey: "test", environment: server.baseUrl });
         const rawRequestBody = {
@@ -165,7 +165,7 @@ describe("Agents", () => {
             .jsonBody(rawResponseBody)
             .build();
 
-        const response = await client.agents.createAgentDeveloper({
+        const response = await client.agents.createAgent({
             agent_name: "Restaurant Receptionist",
             agent_json: {
                 llm: {
@@ -233,7 +233,7 @@ describe("Agents", () => {
         });
     });
 
-    test("getAgentDeveloper", async () => {
+    test("getAgent", async () => {
         const server = mockServerPool.createServer();
         const client = new SonykClient({ apiKey: "test", environment: server.baseUrl });
 
@@ -297,7 +297,7 @@ describe("Agents", () => {
             .jsonBody(rawResponseBody)
             .build();
 
-        const response = await client.agents.getAgentDeveloper("agent_abc123def456");
+        const response = await client.agents.getAgent("agent_abc123def456");
         expect(response).toEqual({
             success: true,
             message: "message",
@@ -373,7 +373,7 @@ describe("Agents", () => {
         });
     });
 
-    test("updateAgentDeveloper", async () => {
+    test("updateAgent", async () => {
         const server = mockServerPool.createServer();
         const client = new SonykClient({ apiKey: "test", environment: server.baseUrl });
         const rawRequestBody = {};
@@ -418,7 +418,7 @@ describe("Agents", () => {
             .jsonBody(rawResponseBody)
             .build();
 
-        const response = await client.agents.updateAgentDeveloper("agentId");
+        const response = await client.agents.updateAgent("agentId");
         expect(response).toEqual({
             success: true,
             message: "message",
@@ -465,7 +465,7 @@ describe("Agents", () => {
         });
     });
 
-    test("deleteAgentDeveloper", async () => {
+    test("deleteAgent", async () => {
         const server = mockServerPool.createServer();
         const client = new SonykClient({ apiKey: "test", environment: server.baseUrl });
 
@@ -478,7 +478,7 @@ describe("Agents", () => {
             .jsonBody(rawResponseBody)
             .build();
 
-        const response = await client.agents.deleteAgentDeveloper("agentId");
+        const response = await client.agents.deleteAgent("agentId");
         expect(response).toEqual({
             success: true,
             message: "message",
@@ -486,7 +486,7 @@ describe("Agents", () => {
         });
     });
 
-    test("getAgentToolsDeveloper", async () => {
+    test("getAgentTools", async () => {
         const server = mockServerPool.createServer();
         const client = new SonykClient({ apiKey: "test", environment: server.baseUrl });
 
@@ -523,7 +523,7 @@ describe("Agents", () => {
             .jsonBody(rawResponseBody)
             .build();
 
-        const response = await client.agents.getAgentToolsDeveloper("agentId");
+        const response = await client.agents.getAgentTools("agentId");
         expect(response).toEqual({
             success: true,
             message: "message",
@@ -561,7 +561,7 @@ describe("Agents", () => {
         });
     });
 
-    test("assignToolToAgentDeveloper", async () => {
+    test("assignToolToAgent", async () => {
         const server = mockServerPool.createServer();
         const client = new SonykClient({ apiKey: "test", environment: server.baseUrl });
         const rawRequestBody = { toolId: "tool_123abc456def" };
@@ -575,7 +575,7 @@ describe("Agents", () => {
             .jsonBody(rawResponseBody)
             .build();
 
-        const response = await client.agents.assignToolToAgentDeveloper("agentId", {
+        const response = await client.agents.assignToolToAgent("agentId", {
             toolId: "tool_123abc456def",
         });
         expect(response).toEqual({
@@ -585,7 +585,7 @@ describe("Agents", () => {
         });
     });
 
-    test("unassignToolFromAgentDeveloper", async () => {
+    test("unassignToolFromAgent", async () => {
         const server = mockServerPool.createServer();
         const client = new SonykClient({ apiKey: "test", environment: server.baseUrl });
         const rawRequestBody = { toolId: "toolId" };
@@ -599,7 +599,7 @@ describe("Agents", () => {
             .jsonBody(rawResponseBody)
             .build();
 
-        const response = await client.agents.unassignToolFromAgentDeveloper("agentId", {
+        const response = await client.agents.unassignToolFromAgent("agentId", {
             toolId: "toolId",
         });
         expect(response).toEqual({
