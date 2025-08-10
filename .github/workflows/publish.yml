@@ -1,25 +1,34 @@
 name: Publish TypeScript SDK
 
 on:
-workflow_dispatch:
-	inputs:
-	version:
-		description: "The version of the TypeScript SDK that you would like to release"
-		required: true
-		type: string
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "The version of the TypeScript SDK that you would like to release"
+        required: true
+        type: string
 
 jobs:
-release:
-	runs-on: ubuntu-latest
-	steps:
-	- name: Checkout repo
-		uses: actions/checkout@v4
-
-	- name: Install Fern CLI
-		run: npm install -g fern-api
-
-	- name: Release TypeScript SDK
-		env:
-		NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-		run: |
-		fern generate --group ts-sdk --version ${{ inputs.version }} --log-level debug
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Install Fern CLI
+        run: npm install -g fern-api
+        
+      - name: Validate Fern configuration
+        run: fern check
+        
+      - name: Release TypeScript SDK
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          FERN_TOKEN: ${{ secrets.FERN_TOKEN }}
+        run: |
+          fern generate --group typescript-sdk --version ${{ inputs.version }} --log-level debug
