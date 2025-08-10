@@ -51,8 +51,8 @@ export class SonykClient {
                 {
                     "X-Fern-Language": "JavaScript",
                     "X-Fern-SDK-Name": "sonyk-sdk",
-                    "X-Fern-SDK-Version": "0.0.5",
-                    "User-Agent": "sonyk-sdk/0.0.5",
+                    "X-Fern-SDK-Version": "0.0.6",
+                    "User-Agent": "sonyk-sdk/0.0.6",
                     "X-Fern-Runtime": core.RUNTIME.type,
                     "X-Fern-Runtime-Version": core.RUNTIME.version,
                 },
